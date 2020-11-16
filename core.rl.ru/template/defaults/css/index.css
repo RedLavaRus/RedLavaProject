@@ -1,0 +1,393 @@
+    @font-face {
+        font-family: "Golos_reg";
+        src: url("/template/defaults/fonts/Golos_Text_Regular.ttf");
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Golos_reg";
+        color: #252525;
+    }
+    
+    .header {
+        width: 100%;
+        height: 600px;
+        background: url("/template/defaults/img/fon.png") no-repeat;
+        background-size: cover, cover;
+    }
+    
+    .header_box {
+        width: 1200px;
+        margin: 0 auto;
+        height: 700px;
+    }
+    
+    .nav_panel {
+        width: 1190px;
+        height: 60px;
+        margin: 0px 5px 0 5px;
+        background: #fff;
+        border-radius: 3px;
+        box-shadow: 0px 8px 13px -4px #535353;
+        display: flex;
+        flex-flow: row nowrap;
+        position: fixed;
+    }
+    
+    .logotipe {}
+    
+    .nav_group_items {
+        margin: 16px 10px 0 10px;
+    }
+    
+    .phone {
+        font-weight: 900;
+        margin: 20px 10px 0 70px;
+    }
+    
+    .login_auth_in {
+        padding: 5px;
+    }
+    
+    .flex1 {
+        width: 90px;
+    }
+    
+    .flex2 {
+        width: 190px;
+    }
+    
+    .flex3 {
+        width: 290px;
+    }
+    
+    .flex4 {
+        width: 390px;
+    }
+    
+    .flex5 {
+        width: 490px;
+    }
+    
+    .flex6 {
+        width: 590px;
+    }
+    
+    .flex7 {
+        width: 690px;
+    }
+    
+    .flex8 {
+        width: 790px;
+    }
+    
+    .flex9 {
+        width: 890px;
+    }
+    
+    .flex10 {
+        width: 990px;
+    }
+    
+    .flex11 {
+        width: 1090px;
+    }
+    
+    .flex12 {
+        width: 1190px;
+    }
+    
+    .flex_mar {
+        margin: 0 5px;
+    }
+    
+    .flex_row {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .logo {
+        width: 100px;
+        height: 49px;
+        margin: 2px 1px;
+    }
+    
+    .logo1 {
+        width: 150px;
+        margin: 2px 1px;
+    }
+    
+    .nav_panel_element {
+        margin: 20px 10px 0 10px;
+    }
+    
+    .button_login {
+        border: #fd495c 2px solid;
+        margin: 8px auto;
+        padding: 5px 20px 1px 20px;
+        color: #fd495c;
+    }
+    
+    .button_login:hover {
+        background: #fd495c;
+        color: #fff;
+        border: #f70920 2px solid;
+    }
+    
+    .header_main_box {
+        display: flex;
+        width: 100%;
+        margin: 100px 0;
+    }
+    
+    .header_main_box_left {
+        flex-direction: column;
+        margin: 120px 0 0 100px;
+    }
+    
+    .header_main_box_right {}
+    
+    .headertopbigimg {
+        width: 490px;
+        margin: 40px 0 0 20px;
+    }
+    
+    .caption_main {
+        font-size: 32px;
+        font-weight: 900;
+    }
+    
+    .text_main {
+        margin: 20px 0;
+    }
+    
+    .button_main {
+        background: #fd495c;
+        color: #fff;
+        margin: 10px 0px 0 0px;
+        padding: 10px 1px;
+        text-align: center;
+        font-size: 18px;
+        width: 290px;
+    }
+    
+    .advantages {
+        width: 100%;
+    }
+    
+    .advantages_box {
+        width: 1190px;
+        margin: 0 auto;
+    }
+    
+    .advantages_caption {
+        font-size: 26px;
+        font-weight: 900;
+        margin: 30px 0;
+        text-align: center;
+    }
+    
+    .advantages_caption {
+        font-size: 36px;
+        font-weight: 900;
+        margin: 30px 0;
+        text-align: center;
+    }
+    
+    .advantages_box_min {
+        width: 1190px;
+        display: flex;
+    }
+    
+    .img_midl_box {
+        width: 75px;
+        margin: 55px 0 0 115px;
+    }
+    
+    .box_text_main_page p {
+        padding: 0px 0 0px 20px;
+    }
+    
+    .box_text_main_page h3 {
+        padding: 0px 0 0px 20px;
+    }
+    
+    .company {
+        width: 100%;
+        background-color: #f4f4f4;
+    }
+    
+    .company_box {
+        width: 1190px;
+        margin: 0 auto;
+    }
+    
+    .company_caption {
+        font-size: 26px;
+        font-weight: 900;
+        margin: 30px 0;
+        padding: 30px 0 0 0;
+        text-align: center;
+    }
+    
+    .we_work {
+        width: 100%;
+    }
+    
+    .we_work_box {
+        width: 1190px;
+        margin: 0 auto;
+    }
+    
+    .we_work_caption {
+        font-size: 26px;
+        font-weight: 900;
+        margin: 30px 0;
+        padding: 30px 0 0 0;
+        text-align: center;
+    }
+    
+    .we_work_img {
+        margin: 0 calc(50% - 450px);
+        width: 900px;
+    }
+    
+    .footer {
+        width: 100%;
+        background: url("/template/defaults/img/footerfon.png");
+        height: 400px;
+        padding: 100px 0 0 0;
+    }
+    
+    .footer_box {
+        width: 1190px;
+        margin: 0 auto;
+        display: flex;
+    }
+    
+    .footer_box_content {
+        display: flex;
+        margin: 100px 0 0 200px;
+    }
+    
+    .footer_object_img {
+        width: 400px;
+    }
+    
+    .footer_nav {
+        color: #fff;
+        margin: 0 25px 0 0;
+        line-height: 1.7;
+    }
+    
+    .footer_info {
+        color: #fff;
+        margin: 0 0 0 80px;
+    }
+    
+    .futer_logo {
+        font-size: 48px;
+    }
+    
+    .footer_contakts {
+        font-size: 18px;
+    }
+    
+    .footer_text {
+        font-size: 12px;
+    }
+    
+    .footer_nav a {
+        text-decoration: none;
+        color: inherit;
+        font-size: 12px;
+        line-height: 1.7;
+    }
+    
+    .block_father {
+        width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .core_user_reg_block_main {
+        margin: 50px 0;
+        padding: 0;
+        border-radius: 5px;
+        font-family: Ubuntu;
+    }
+    
+    .red {
+        background-color: #f70920;
+        border-radius: 0 5px 5px 0;
+        min-height: 60vh;
+        margin: 0;
+        padding: 0;
+        box-shadow: 10px 19px 50px 0px #000000;
+    }
+    
+    .white {
+        background-color: #fff;
+        border-radius: 5px 0 0 5px;
+        min-height: 60vh;
+        box-shadow: 0px 19px 50px 0px #000000;
+    }
+    
+    .head_welcom {
+        margin: 110px auto 0 auto;
+        width: 80%;
+        color: #fff;
+        font-size: 42px;
+        text-align: left;
+        font-weight: 900;
+    }
+    
+    .text_welcom {
+        margin: 30px auto 0 auto;
+        width: 70%;
+        color: #ccc;
+        font-size: 14px;
+        text-align: center;
+        font-family: Ubuntu;
+    }
+    
+    .enter_box {
+        margin: 40px auto;
+        padding: 10px 20px;
+        border: 1px solid #fcfcfc;
+        width: 100px;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+    }
+    
+    .enter_box_red {
+        margin: 40px auto;
+        padding: 10px 20px;
+        border: 1px solid #f70920;
+        width: 200px;
+        color: #f70920;
+        text-align: center;
+        border-radius: 5px;
+    }
+    
+    .font_black {}
+    
+    .head_reg {
+        color: #000;
+        margin: 70px 0 20px -20px;
+        width: 80%;
+        font-size: 42px;
+        text-align: left;
+        font-weight: 900;
+    }
+    
+    .text_forma {
+        padding: 5px;
+        width: 200px;
+    }
+    
+    .form_enter_bbox {
+        width: 300px;
+        padding: 10px 0 0 70px;
+    }
