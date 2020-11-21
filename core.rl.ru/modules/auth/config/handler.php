@@ -6,12 +6,12 @@ class Handler
     
     public function auth($url)
     {
-        if(CGF::$auth_type == "custom"){
-            Modules\Auth\Controller\Auth::custom($url);
-        }elseif(CGF::$auth_type == "api"){
-            Modules\Auth\Controller\Auth::api($url);
-        }elseif(CGF::$auth_type == "default"){
-            Modules\Auth\Controller\Auth::default($url);
+        if(CFG::$auth_type == "custom"){
+            \Modules\Auth\Controller\Auth::custom($url);
+        }elseif(CFG::$auth_type == "api"){
+            \Modules\Auth\Controller\Auth::api($url);
+        }elseif(CFG::$auth_type == "default"){
+            \Modules\Auth\Controller\Auth::default($url);
         }else{
 
         }
