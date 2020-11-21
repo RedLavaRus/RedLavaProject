@@ -1,5 +1,5 @@
 <?php<?php
-namespace Modules\Auth\Auth;
+namespace Modules\Auth\Controller;
 use Modules\Auth\Config\Config as CFGauth;
 class Auth
 {
