@@ -6,7 +6,8 @@ class Auth
     
     public static function default($url)
     {
-        echo 1;
+        if(!(self::checkDate($url))){return "error:Ошибка";}
+        return self::auth($url);
     }
     public static function api($url)
     {
@@ -15,5 +16,13 @@ class Auth
     public static function custom($url)
     {
        
+    }
+
+    public static function checkDate($url)
+    {
+        return false ;
+    }
+    public static  function auth($url){
+        return "aa";
     }
 }
