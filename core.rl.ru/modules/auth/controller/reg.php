@@ -16,7 +16,10 @@ class Reg
     {
         return self::checkDate($url);
     }
-
+    public static function custom($url)
+    {
+       
+    }
     public static function checkDate($url)
     {
         
