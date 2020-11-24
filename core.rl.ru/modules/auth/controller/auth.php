@@ -10,12 +10,21 @@ class Auth
     
     public static function default($url)
     {
-        return self::api($url);
+        return self::checkDate($url);
     }
     public static function api($url)
     {
-       return self::checkDate($url);
-       
+        
+        $urlC = \Modules\Auth\Config\Config::$authAPIDomen."/?go=api&func=auth&login=".$url["get"]["login"]."&pass=".$url["get"]["pass"];
+
+        $ch = curl_init($urlC);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        $html = curl_exec($ch);
+        curl_close($ch);
+         
+        echo $html;
         
     }
     public static function custom($url)

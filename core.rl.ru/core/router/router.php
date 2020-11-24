@@ -77,7 +77,7 @@ class Router
             self::instails();
         }
         if(isset($_GET["go"]) && $_GET["go"] == "ajax")  \Core\Ajax\Ajax::show($url);
-
+        if(isset($_GET["go"]) && $_GET["go"] == "api")  \Core\Api\Api::show($url);
         if(!isset($url["url"]) ) $url["url"][] = "/";
         $res_url="";
         foreach($url["url"] as $u){
