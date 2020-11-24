@@ -25,10 +25,10 @@ class Auth
 
     public static function checkDate($url)
     {
-        if($url["post"]["login"] < \CFG::$minimum_login){return "error:логин слишком короткий";}
-        if($url["post"]["login"] > \CFG::$maximum_login){return "error:логин слишком длинный";}
-        if($url["post"]["login"] < \CFG::$minimum_password){return "error:пароль слишком короткий";}
-        if($url["post"]["login"] > \CFG::$maximum_password){return "error:пароль слишком длинный";}
+        if(strlen($url["post"]["login"]) < \CFG::$minimum_login){return "error:логин слишком короткий";}
+        if(strlen($url["post"]["login"]) > \CFG::$maximum_login){return "error:логин слишком длинный";}
+        if(strlen($url["post"]["password"]) < \CFG::$minimum_password){return "error:пароль слишком короткий";}
+        if(strlen($url["post"]["password"]) > \CFG::$maximum_password){return "error:пароль слишком длинный";}
         return self::cash($url);
         //проверить заполнены ли поля
     }
@@ -46,11 +46,11 @@ class Auth
         $id = $orm->select("id")
         ->where("
         login = $login, 
-        password =  $pass 
+        pass =  $pass 
         "
           )->from("User")->execute()->object();
           $ids = $id->object[0]["1"];
-          if($id >= 1) 
+          if($ids >= 1) 
           {return "ok:$ids";}
           else 
           {return "error:неверный логин и пароль";}      

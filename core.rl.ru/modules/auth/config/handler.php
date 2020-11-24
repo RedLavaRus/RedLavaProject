@@ -22,7 +22,17 @@ class Handler
     }
     public function register($url)
     {
-       
+        if(\CFG::$auth_type == "custom"){
+            $result =  \Modules\Auth\Controller\Reg::custom($url);
+        }elseif(\CFG::$auth_type == "api"){
+            $result =  \Modules\Auth\Controller\Reg::api($url);
+        }elseif(\CFG::$auth_type == "default"){
+            $result =  \Modules\Auth\Controller\Reg::default($url);
+            
+        }else{
+            $result = "error:failtypeReg";
+        }
+        return $result;
     }
     public function restore($url)
     {
