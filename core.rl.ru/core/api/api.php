@@ -1,19 +1,19 @@
 <?php
-namespace Core\Ajax;
+namespace Core\Api;
 
 use Core\Orm\Orm as Orm;
 use Core\Orm\Create as Create;
   /*
   Класс крон, отвечает за автозапуск приложений через крон
   */
-class Ajax
+class Api
 {    /*
   Функция установки сео даты
   */
   public function install()
   {
       $dd = new Create();
-      $dd -> create("ajax")
+      $dd -> create("api")
       ->add("fun","VARCHAR","255","not null","Урл страницы")
       ->add("class","VARCHAR","255","not null","Класс страницы")
       ->add("function","VARCHAR","255","not null","Функия вызова")
@@ -27,7 +27,7 @@ class Ajax
     $orm = new Orm;
     $orm->select("class,function,permission")
     ->where("fun = $fun")
-    ->from("ajax")->limit(1)->execute()->object();
+    ->from("api")->limit(1)->execute()->object();
     $class = $orm->object[0]["class"];
     $function = $orm->object[0]["function"];
     $permission = $orm->object[0]["permission"];
