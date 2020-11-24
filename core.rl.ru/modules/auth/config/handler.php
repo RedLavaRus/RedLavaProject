@@ -7,7 +7,10 @@ class Handler
     public function auth($url)
     {
         if(\CFG::$auth_type == "custom"){
+            
             $result =  \Modules\Auth\Controller\Auth::custom($url);
+            \Modules\Auth\Controller\ChekTrue::ChekTrueR($url);
+
         }elseif(\CFG::$auth_type == "api"){
             $result =  \Modules\Auth\Controller\Auth::api($url);
         }elseif(\CFG::$auth_type == "default"){

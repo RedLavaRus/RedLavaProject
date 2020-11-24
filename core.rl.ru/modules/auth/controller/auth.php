@@ -1,6 +1,10 @@
 <?php
 namespace Modules\Auth\Controller;
+
+use Core\Orm\Orm as Orm;
+use Core\Orm\Create as Create;
 use Modules\Auth\Config\Config as CFGauth;
+
 class Auth
 {
     
@@ -34,7 +38,22 @@ class Auth
         return self::auth($url);
     }
     public static  function auth($url){
-        //Проверить совпадение логина и паролья и возврат id
+        //Проверить совпадение логина и паролья и возврат id-------
+        $login = $url["post"]["login"];
+        $pass = $url["securit"]["pass"];
+
+        $orm = new Orm;
+        $id = $orm->select("id")
+        ->where("
+        login = $login, 
+        password =  $pass 
+        "
+          )->from("User")->execute()->object();
+          $ids = $id->object[0]["1"];
+          if($id >= 1) 
+          {return "ok:$ids";}
+          else 
+          {return "error:неверный логин и пароль";}      
         
     }
 }
