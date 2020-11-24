@@ -27,8 +27,8 @@ class Auth
     {
         if(strlen($url["post"]["login"]) < \CFG::$minimum_login){return "error:логин слишком короткий";}
         if(strlen($url["post"]["login"]) > \CFG::$maximum_login){return "error:логин слишком длинный";}
-        if(strlen($url["post"]["password"]) < \CFG::$minimum_password){return "error:пароль слишком короткий";}
-        if(strlen($url["post"]["password"]) > \CFG::$maximum_password){return "error:пароль слишком длинный";}
+        if(strlen($url["post"]["pass"]) < \CFG::$minimum_password){return "error:пароль слишком короткий";}
+        if(strlen($url["post"]["pass"]) > \CFG::$maximum_password){return "error:пароль слишком длинный";}
         return self::cash($url);
         //проверить заполнены ли поля
     }
@@ -49,9 +49,9 @@ class Auth
         pass =  $pass 
         "
           )->from("User")->execute()->object();
-          $ids = $id->object[0]["1"];
-          if($ids >= 1) 
-          {return "ok:$ids";}
+          
+          if(isset($id->object[0]["id"]) and $id->object[0]["id"] >= 1) 
+          {return "ok:".$id->object[0]["id"];}
           else 
           {return "error:неверный логин и пароль";}      
         

@@ -13,7 +13,7 @@ class Test
         //var_dump($url);
 
        $dd =  new \Modules\Auth\Config\Handler;
-       $d = $dd->register($url);
+       $d = $dd->auth($url);
        var_dump($d);
     }
 }
