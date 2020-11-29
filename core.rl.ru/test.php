@@ -14,7 +14,7 @@ class Test
 
        $dd =  new \Modules\Auth\Config\Handler;
        $d = $dd->auth($url);
-       var_dump($d);
+       //var_dump($d);
     }
 }
 

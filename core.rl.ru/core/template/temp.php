@@ -42,6 +42,7 @@ class Temp
     public static function viewHead($template){
         $config = self::$config;
         include_once MYPOS."/template"."/".$template. '/blocks/head.php';
+        
     }
 
     public static function viewNav($template){

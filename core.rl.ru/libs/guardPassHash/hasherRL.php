@@ -5,7 +5,7 @@ class HasherRL
 {
     public static function startHash($url)
     {
-        $pass = $url["post"]["pass"];
+        $pass = $url["post"]["pass1"];
         $login = $url["post"]["login"];
         $passHash = hash('sha256', $pass);
         $loginHash = hash('sha256', $login);
@@ -13,6 +13,7 @@ class HasherRL
         $hashlvl2 = hash('sha256', $passHash.$loginHash.$hashlvl1);
         return $hashlvl2;
     }
+    
 
 }
 

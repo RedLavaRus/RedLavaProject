@@ -9,12 +9,12 @@ class Reg
 {
     public static function default($url)
     {
-        return self::api($url);
+        return self::checkDate($url);
     }
 
     public static function api($url)
     {
-        return self::checkDate($url);
+        
     }
     public static function custom($url)
     {
@@ -23,10 +23,23 @@ class Reg
     public static function checkDate($url)
     {
         
-        if(strlen($url["post"]["login"]) < \CFG::$minimum_login){return "error:логин слишком короткий";}
-        if(strlen($url["post"]["login"]) > \CFG::$maximum_login){return "error:логин слишком длинный";}
-        if(strlen($url["post"]["pass"]) < \CFG::$minimum_password){return "error:пароль слишком короткий";}
-        if(strlen($url["post"]["pass"]) > \CFG::$maximum_password){return "error:пароль слишком длинный";}
+        if(strlen($url["post"]["login"]) < \CFG::$minimum_login){
+            \Core\User\CollectorError::$error_login .="логин слишком короткий";
+            return "error:логин слишком короткий";
+        }
+        if(strlen($url["post"]["login"]) > \CFG::$maximum_login){
+            \Core\User\CollectorError::$error_login .="логин слишком длинный";
+            return "error:логин слишком длинный";}
+        if(strlen($url["post"]["pass1"]) < \CFG::$minimum_password){
+            \Core\User\CollectorError::$error_pass .="пароль слишком короткий";
+            return "error:пароль слишком короткий";}
+        if(strlen($url["post"]["pass1"]) > \CFG::$maximum_password){
+            \Core\User\CollectorError::$error_pass .= "пароль слишком длинный";
+            return "error:пароль слишком длинный";}
+
+        if($url["post"]["pass1"] != $url["post"]["pass2"] ){
+            \Core\User\CollectorError::$error_pass .= "Пароли не совпадают";
+            return "error:Пароли не совпадают";}
         
         return self::cash($url);
         //проверить заполнены ли поля
@@ -52,7 +65,8 @@ class Reg
           //var_dump("<pre>",$id);
           
           if(isset($id->object[0]["id"]) and $id->object[0]["id"] >= 1) 
-          {return "error:Логин занят";}
+          {\Core\User\CollectorError::$error_login .= " Логин занят";
+            return "error:Логин занят";}
           else 
           {
            return self::addUser($url);
@@ -93,7 +107,9 @@ class Reg
           if($ids >= 1) 
           {return "ok:$ids";}
           else 
-          {return "error:ошибка!";}     
+          {
+            \Core\User\CollectorError::$error_login .= " ошибка!";
+            return "error:ошибка!";}     
 
     }
 

@@ -23,7 +23,7 @@
 
         <p class="head_welcom">Добро пожаловать</p>
         <p class="text_welcom">Если вы уже зарегестрированны, то просот войдите в свой аккаунт</p>
-        <a href = "/user/login/"><div class="enter_box">Войти</div></a>
+        <a href = "/user/auth/"><div class="enter_box">Войти</div></a>
         </div>
 
 

@@ -18,6 +18,14 @@
                 </div>
                 <div class="phone flex_row flex2"><?php echo $config::$phone;?></div>
                 <div class="login_auth_in flex_row flex_mar flex2">
-                    <div class="button_login">Вход</div>
+                    <div class="button_login">
+                        
+                    <?php if(isset($_SESSION["id"]) and $_SESSION["id"] >= 1) {
+                        echo "<a href='/'>Личный кабинет</a>";
+                    } else{
+
+                     echo "<a href='/user/auth/'>Вход</a>";}?>
+                
+                    </div>
                 </div>
             </div>

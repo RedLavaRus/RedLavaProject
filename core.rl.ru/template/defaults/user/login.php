@@ -9,7 +9,7 @@
 
         <p class="head_welcom">Рады снова вас видеть!</p>
         <p class="text_welcom">Если у вас до сих пор нет аккаунта, тогд пройдите бесплатную регистрацию.</p>
-        <a href = "/user/register/"><div class="enter_box">Регистрация</div></a>
+        <a href = "/user/reg/"><div class="enter_box">Регистрация</div></a>
         </div>
         <div class="flex4 white">
         <form class="form_enter_bbox"  method="post">
