@@ -1,0 +1,300 @@
+@font-face {
+    font-family: 'bebas';
+    src: url('/res/fonts/bebas.ttf');
+}
+
+@font-face {
+    font-family: 'golos';
+    src: url('/res/fonts/golos.ttf');
+}
+
+@font-face {
+    font-family: 'unisans';
+    src: url('/res/fonts/unisans.ttf');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'unisans';
+}
+
+header {
+    width: 100%;
+    height: 72px;
+    background-color: #151515;
+    position: fixed;
+}
+
+nav {
+    width: calc(100% - 50px);
+    margin: 0 25px;
+    color: #fefefe;
+    display: flex;
+    flex-direction: row;
+}
+
+.flex1 {
+    flex-grow: 1;
+}
+
+.flex2 {
+    flex-grow: 2;
+}
+
+.flex3 {
+    flex-grow: 3;
+}
+
+.flex4 {
+    flex-grow: 4;
+}
+
+.flex5 {
+    flex-grow: 5;
+}
+
+.flex6 {
+    flex-grow: 6;
+}
+
+.flex7 {
+    flex-grow: 7;
+}
+
+.flex8 {
+    flex-grow: 8;
+}
+
+.flex9 {
+    flex-grow: 9;
+}
+
+.flex10 {
+    flex-grow: 10;
+}
+
+.flex11 {
+    flex-grow: 11;
+}
+
+.flex12 {
+    flex-grow: 12;
+}
+
+.nav_element {
+    flex-grow: 1;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.login {
+    background-color: #ff4936;
+    padding: 8px 2px 4px 2px;
+    text-align: center;
+    font-size: 18px;
+    margin: 16px 20px;
+    border: 2px solid #ff4936;
+    max-width: 130px;
+    font-weight: 100;
+    font-family: 'bebas';
+    flex-grow: 1;
+}
+
+.reg {
+    background-color: #ff4936;
+    padding: 8px 2px 4px 2px;
+    text-align: center;
+    font-size: 18px;
+    margin: 16px 20px;
+    border: 2px solid #ff4936;
+    max-width: 130px;
+    font-weight: 100;
+    font-family: 'bebas';
+    flex-grow: 1;
+}
+
+.reg:hover {
+    background-color: #fa5e4c;
+    border: 2px solid #ff4936;
+}
+
+.login:hover {
+    background-color: #fa5e4c;
+    border: 2px solid #ff4936;
+}
+
+.nav_element {
+    margin: 26px 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+.modal {
+    display: none;
+    background: #333333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 99999;
+}
+
+.modal_vis {
+    display: block;
+}
+
+.body_block {
+    overflow: hidden;
+    margin-right: 17px;
+}
+
+#close_modal {
+    color: #BFE2FF;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Times, sans-serif;
+    border-radius: 50%;
+    border: 4px solid #BFE2FF;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin: 20px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    transform: rotate(45deg);
+    transition: all 0.6s;
+    box-sizing: content-box;
+}
+
+#close_modal:hover {
+    color: #FFF;
+    transform: rotate(135deg);
+}
+
+.modal_txt {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
+    background: #FFF;
+    padding: 30px;
+    margin: 100px auto;
+    max-width: 800px;
+}
+
+.ty_box {
+    width: 1190px;
+    margin: 0 auto;
+    padding: 10px 5px;
+    display: flex;
+}
+
+.tv_packet_chalenger {
+    margin: 10px;
+    background-color: #151515;
+    width: 380px;
+}
+
+.tv_packet_chalenger h3 {
+    color: #ccc;
+    font-size: 28px;
+    padding: 30px 0 10px 0;
+    text-align: center;
+    margin: 30px 0 0 0;
+}
+
+.tv_packet_chalenger h4 {
+    color: #ccc;
+    font-size: 22px;
+    padding: 10px 0 30px 0;
+    text-align: center;
+    margin: 0px 0 0 0;
+}
+
+.chanel_tv {
+    width: 120px;
+    height: 120px;
+    border: 4px solid rgb(158, 4, 4);
+    border-radius: 100px;
+    margin: 10px auto;
+}
+
+.chanel_tv_head {
+    padding: 10px;
+    margin: 10px auto;
+    font-size: 48;
+    color: #ccc;
+    text-align: center;
+}
+
+.chanel_tv_foot {
+    color: #ccc;
+    padding: 00px;
+    margin: -20px auto 0 auto;
+    text-align: center;
+}
+
+.calan_list {
+    color: #ccc;
+    text-align: center;
+    display: block;
+    margin: 20px auto 50px auto;
+    border-bottom: 2px dotted;
+    width: 120px;
+}
+
+.chanal_list_ajax_show {
+    width: 1190px;
+    margin: 30px auto;
+}
+
+.tv_packet_name {
+    padding-left: 30px;
+    font-size: 24px;
+    padding-bottom: 20px;
+}
+
+.tv_packet_hate {
+    padding-left: 30px;
+    font-size: 21px;
+    padding-bottom: 10px;
+}
+
+.tv_packet_box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chanel_view1 {
+    width: 148px;
+    margin: 10px;
+    border: 1px solid #ccc;
+}
+
+.chanel_view1 img {
+    width: 148px;
+}
+
+.chanel_view1 p {
+    padding: 10px;
+    text-align: center;
+}
+
+.a {
+    cursor: pointer;
+}
+
+.user_auth_form_box {
+    width: 300px;
+    margin: 10px auto;
+    background: #e3e3e3;
+}
+
+.user_auth_form_box h1 {
+    font-size: 24px;
+}

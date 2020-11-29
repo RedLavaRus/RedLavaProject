@@ -15,6 +15,7 @@ class AuthShow
 
         }elseif(\CFG::$auth_type == "api"){
   //          $result =  \Modules\Auth\Controller\Auth::api($url);
+            $this->showForm($url);
         }elseif(\CFG::$auth_type == "default"){
             $this->showForm($url);
         }else{
@@ -35,7 +36,7 @@ class AuthShow
         }else{
             \Modules\Auth\Controller\ChekTrue::ChekTrueR($url);
             $result =  \Modules\Auth\Controller\Auth::default($url);
-            
+            //var_dump( $result);
             $ids = explode(":", $result);
             if(isset($ids["1"]) and $ids["1"] >=1)
             {

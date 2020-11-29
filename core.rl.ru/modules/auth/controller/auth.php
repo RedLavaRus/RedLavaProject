@@ -59,7 +59,7 @@ class Auth
         //Проверить совпадение логина и паролья и возврат id-------
         $login = $url["post"]["login"];
         $pass = $url["securit"]["pass"];
-
+        if(\CFG::$auth_type == "default"){
         $orm = new Orm;
         $id = $orm->select("id")
         ->where("
@@ -76,6 +76,29 @@ class Auth
             \Core\User\CollectorError::$error_pass .="неверный логин и пароль";
               return "error:неверный логин и пароль";
             }      
-        
+        }
+        if(\CFG::$auth_type == "api"){
+
+
+            $urlC = \Modules\Auth\Config\Config::$authAPIDomen."/?go=api&func=auth&login=".$url["post"]["login"]."&pass=".$url["post"]["pass1"];
+
+            $ch = curl_init($urlC);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_HEADER, false);
+            $html = curl_exec($ch);
+            curl_close($ch);
+             
+            $ids = explode(":", $html);
+            if($ids["0"] == "error" ){
+                
+            \Core\User\CollectorError::$error_login .="неверный логин и пароль";
+            \Core\User\CollectorError::$error_pass .="неверный логин и пароль";
+            
+            }
+            return $html;
+
+               
+        }
     }
 }
