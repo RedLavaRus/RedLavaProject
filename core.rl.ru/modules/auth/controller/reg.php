@@ -15,6 +15,7 @@ class Reg
     public static function api($url)
     {
         
+        return self::checkDate($url);
     }
     public static function custom($url)
     {
@@ -60,6 +61,7 @@ class Reg
     {
         
         $login = $url["post"]["login"];
+        if(\CFG::$auth_type == "default"){
         $orm = new Orm;
         $id = $orm->select("id")
         ->where("
@@ -75,6 +77,28 @@ class Reg
           {
            return self::addUser($url);
           }  
+        }
+        if(\CFG::$auth_type == "api"){
+             //     http://core.rl.ru/?go=api&func=reg&login=urlrewrwe2&pass=urlrewrwe&email=admin@ya.ru
+            $urlC = \Modules\Auth\Config\Config::$authAPIDomen."/?go=api&func=reg&login=".$url["post"]["login"]."&pass=".$url["post"]["pass1"]."&email=".$url["post"]["email"];
+
+            $ch = curl_init($urlC);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_HEADER, false);
+            $html = curl_exec($ch);
+            curl_close($ch);
+             
+            $ids = explode(":", $html);
+            if($ids["0"] == "error" ){
+              
+            \Core\User\CollectorError::$error_login .="неверный логин и пароль";
+            \Core\User\CollectorError::$error_pass .="неверный логин и пароль";
+            
+            }
+            
+            return $html;
+        }
     }
     public static function addUser($url){
         $login = $url["post"]["login"];

@@ -14,7 +14,7 @@ class RegShow
  //           \Modules\Auth\Controller\ChekTrue::ChekTrueR($url);
 
         }elseif(\CFG::$auth_type == "api"){
-  //          $result =  \Modules\Auth\Controller\Auth::api($url);
+            $this->showForm($url);
         }elseif(\CFG::$auth_type == "default"){
             $this->showForm($url);
         }else{
