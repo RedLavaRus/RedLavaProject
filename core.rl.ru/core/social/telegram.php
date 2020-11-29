@@ -5,6 +5,7 @@ namespace Core\Social;
 
 class Telegram
 {
+    //обработчик телеграмма
     public function message($token, $chat_id, $massanger) {
         $ch = curl_init();
         curl_setopt_array(

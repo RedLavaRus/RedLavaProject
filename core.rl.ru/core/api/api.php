@@ -8,7 +8,7 @@ use Core\Orm\Create as Create;
   */
 class Api
 {    /*
-  Функция установки сео даты
+  Функция установки апи
   */
   public function install()
   {
@@ -20,6 +20,7 @@ class Api
       ->add("permission","text","","","право доступа");
       $dd ->execute();
   }
+  //работа с апи функциями
   public static function show($url)
   {
     $fun = $url["get"]["func"];
