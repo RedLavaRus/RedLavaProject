@@ -40,7 +40,7 @@ class Reg
         if($url["post"]["pass1"] != $url["post"]["pass2"] ){
             \Core\User\CollectorError::$error_pass .= "Пароли не совпадают";
             return "error:Пароли не совпадают";}
-            var_dump($url);
+            //var_dump($url);
         if(filter_var($url["post"]["email"], FILTER_VALIDATE_EMAIL) != true){
                 \Core\User\CollectorError::$error_email .= "Неверный емаил";
                 return "error:Неверный емаил";}

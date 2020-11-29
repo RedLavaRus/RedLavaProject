@@ -16,6 +16,7 @@ class Handler
     {
         $url["post"]["login"] = $url["get"]["login"];
         $url["post"]["pass1"] = $url["get"]["pass"];
+        $url["post"]["pass2"] = $url["get"]["pass"];
         $url["post"]["email"] = $url["get"]["email"];
         $result =  \Modules\Auth\Controller\Reg::default($url);
         echo $result;

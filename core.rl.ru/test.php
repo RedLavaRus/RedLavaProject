@@ -12,6 +12,7 @@ class Test
         $url["post"]["email"] = "test@test.ru";
         //var_dump($url);
  //http://core.rl.ru/?go=api&func=auth&login=urlrewrwe&pass=urlrewrwe
+ //http://core.rl.ru/?go=api&func=reg&login=urlrewrwe2&pass=urlrewrwe&email=admin@ya.ru
        $dd =  new \Modules\Auth\Config\Handler;
        $d = $dd->auth($url);
        //var_dump($d);
