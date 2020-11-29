@@ -32,6 +32,9 @@ class Handler
     }
     public function exit($url)
     {
+        $start = new \Modules\Auth\Controller\Exits;
+        $start->  index($url);
+   
        
     }
 }
