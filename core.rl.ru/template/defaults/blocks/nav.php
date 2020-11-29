@@ -22,7 +22,7 @@
                         
                     <?php if(isset($_SESSION["id"]) and $_SESSION["id"] >= 1) {
                         echo "<a href='/'>Личный кабинет</a>";
-                        echo  $_SESSION["id"];
+                       // echo  $_SESSION["id"];
                     } else{
 
                      echo "<a href='/user/auth/'>Вход</a>";}?>
