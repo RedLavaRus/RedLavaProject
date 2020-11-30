@@ -38,6 +38,10 @@ class Temp
         self::viewBody($template,$file);
         self::viewFooter($template);
     }
+    public function ViewCastom($template,$block,$file)//("default","index");
+    {
+        include_once MYPOS."/template"."/".$template. '/'.$block.'/'.$file.'.php';
+    }
 
     public static function viewHead($template){
         $config = self::$config;

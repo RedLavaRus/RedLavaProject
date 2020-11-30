@@ -18,7 +18,7 @@ class Test
        //$d = $dd->auth($url);
        //var_dump($d);
 
-       $test = new \Core\Loger\Loger;
+       $test = new  \Modules\Lc\Config\Handler;
        $test ->install();
     }
 }

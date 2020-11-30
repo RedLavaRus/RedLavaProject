@@ -7,9 +7,12 @@ use Core\Orm\Create as Create;
   Класс крон, отвечает за автозапуск приложений через крон
   */
 class Ajax
-{    /*
+{    
+  /*
   Функция установки сео даты
   */
+
+  //установка таблицы сео даных
   public function install()
   {
       $dd = new Create();
@@ -20,6 +23,7 @@ class Ajax
       ->add("permission","text","","","право доступа");
       $dd ->execute();
   }
+  //отображения сео данных
   public static function show($url)
   {
     $fun = $url["get"]["func"];
