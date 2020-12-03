@@ -9,6 +9,7 @@ class Handler
 {
     public static $lmenu;
     public static $tmemu;
+    public static $clientinfo;
 
     public function install(){
 
@@ -78,10 +79,8 @@ class Handler
     
     }
     public function start($url){
-        $this->showLeftMenu($url);
-        $this->showTopMenu($url);
-        $this->showContent($url);
-        $this->bild($url);
+        $this->showContentClient($url);
+        //$this->bild($url);
     }
 
     public function importclient($url){
@@ -136,4 +135,28 @@ class Handler
         $view->ViewCastom("defaults","lc","lmenu");
 
     }
+
+    public function showContentClient($url){
+        var_dump($url);
+        $this->showLeftMenu($url);
+        $this->showTopMenu($url);
+        $this->genClient($url);
+        $view = new \Core\Template\Temp;
+        $view->ViewCastom("defaults","lc","tmenu");
+        $view->ViewCastom("defaults","crmphone","index");
+        $view->ViewCastom("defaults","lc","lmenu");
+    }
+
+    public function genClient($url){
+        
+        $orm = new Orm;
+        $orm->select("region,sity,adres,fio,phone1,phone2,phone3,phone4,history")
+        ->where("
+        id = 1"
+          )->from("crm_phone_base")->limit(1)->execute()->object();
+          //var_dump( $orm ->object());
+
+          self::$clientinfo = $orm->object();
+    }
+
 }
