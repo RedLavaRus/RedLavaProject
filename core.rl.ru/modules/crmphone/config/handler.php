@@ -33,24 +33,24 @@ class Handler
         ->add("special_group","VARCHAR","255","not null","специальная подгруппа")
         ->add("group","VARCHAR","255","not null","группа доступа")
         ->add("permission","text","","","право доступа");
-
- 
         $dd ->execute();
 
-        $zz = new Create();
-        $zz -> create("lc_tmenu")
-        ->add("group","VARCHAR","255","not null","Функия вызова")
-        ->add("url","VARCHAR","255","not null","Урл страницы")
-        ->add("name","VARCHAR","255","not null","Класс страницы")
-        ->add("class","VARCHAR","255","not null","Функия вызова")
-        ->add("permission","text","","","право доступа");
-        $zz ->execute();
 
         $orm = new Orm;
         $orm->insert("
         group = default,
-        url =  /lc/,
-        name = Личный кабинет,
+        url =  /lc/showclient/,
+        name = Показать клиента,
+        class = item_menu,
+        permission = all
+        ")            
+        ->from("lc_lmenu")->execute();
+
+        $orm1 = new Orm;
+        $orm1->insert("
+        group = default,
+        url =  /lc/importclient/,
+        name = импорт клиента,
         class = item_menu,
         permission = all
         ")            
@@ -60,15 +60,31 @@ class Handler
 
         $orm2 = new Orm;
         $orm2->insert("
-        url = lc,
-        class = Modules\Lc\Config\Handler,
-        func = startShow,
-        Описание = Главная страница Личного кабинета
-    ")            
-    ->from("router")->execute();
+        url = lc/showclient,
+        class = Modules\CRMPhone\Config\Handler,
+        func = start,
+        Описание = Показать клиента
+        ")            
+        ->from("router")->execute();
+
+        $orm3 = new Orm;
+        $orm3->insert("
+        url = lc/importclient,
+        class = Modules\CRMPhone\Config\Handler,
+        func = importclient,
+        Описание =импорт клиента
+        ")            
+        ->from("router")->execute();
     
     }
-    public function startShow($url){
+    public function start($url){
+        $this->showLeftMenu($url);
+        $this->showTopMenu($url);
+        $this->showContent($url);
+        $this->bild($url);
+    }
+
+    public function importclient($url){
         $this->showLeftMenu($url);
         $this->showTopMenu($url);
         $this->showContent($url);
@@ -80,9 +96,9 @@ class Handler
         $orm = new Orm;
         $db_tb = $orm->select("id,group,url,name,class,permission")
         ->from("lc_lmenu")->execute()->object();
-        
         $x=0;
         foreach($db_tb->object as $item){
+            
             $leftMenuArray[$x]["id"] = $item["id"];
             $leftMenuArray[$x]["url"] = $item["url"];
             $leftMenuArray[$x]["name"] = $item["name"];
@@ -92,7 +108,7 @@ class Handler
         }
 
         //var_dump("<pre>",$leftMenuArray);
-        self::$lmenu = $leftMenuArray;
+        \Modules\Lc\Config\Handler::$lmenu = $leftMenuArray;
 
     }
 

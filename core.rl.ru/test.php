@@ -18,8 +18,26 @@ class Test
        //$d = $dd->auth($url);
        //var_dump($d);
 
-       $test = new  \Modules\Lc\Config\Handler;
-       $test ->install();
+       //$test = new  \Modules\CRMPhone\Config\Handler;
+       //$test ->install();
+      /* $orm1 = new \Core\Orm\Orm;
+        $orm1->insert("
+        group = default,
+        url =  /lc/importclient/,
+        name = импорт клиента,
+        class = item_menu,
+        permission = all
+        ")            
+        ->from("lc_lmenu")->execute();
+
+        $orm3 = new \Core\Orm\Orm;
+        $orm3->insert("
+        url = lc/importclient,
+        class = Modules\CRMPhone\Config\Handler,
+        func = importclient,
+        Описание =импорт клиента
+        ")            
+        ->from("router")->execute();*/
     }
 }
 
