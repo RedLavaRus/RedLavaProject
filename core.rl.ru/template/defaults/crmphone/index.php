@@ -39,27 +39,31 @@ $array_history = unserialize( $sl["history"] );
             </div>
         </div>
     </div>
+    <?php
+    
+    
+    $array[0]["id_agent"] = "Гакман Владлена";
+    $array[0]["date"] = "01.10.20";
+    $array[0]["status"] = "думает";
+    $array[0]["comment"] = "Абоненту интересно, советуется с женой, звонить 05.10.20";
+    $ttr = serialize($array);
+    //var_dump($ttr);echo "<br><br><br>";
+    $array_hist = unserialize($sl["history"]);
+?>
     <div class="table_up">
-        <div class="form_left ">Гакман Владлена
-            <div class="data ">01.10.20</div>
-            <div class="status marg">думает </div>
-            <div class="comment marg">Абоненту интересно, советуется с женой, звонить 05.10.20</div>
-        </div>
-        <div class="form_left ">Гакман Владлена
-            <div class="data ">01.10.20</div>
-            <div class="status marg">думает </div>
-            <div class="comment marg">Абоненту интересно, советуется с женой, звонить 05.10.20</div>
-        </div>
-        <div class="form_left ">Гакман Владлена
-            <div class="data ">01.10.20</div>
-            <div class="status marg">думает </div>
-            <div class="comment marg">Абоненту интересно, советуется с женой, звонить 05.10.20</div>
-        </div>
-        <div class="form_left ">Гакман Владлена
-            <div class="data ">01.10.20</div>
-            <div class="status marg">думает </div>
-            <div class="comment marg">Абоненту интересно, советуется с женой, звонить 05.10.20</div>
-        </div>
+    <?php
+foreach($array_hist as  $his){
+    
+
+    echo '<div class="form_left ">'.$his["id_agent"].'
+    <div class="data ">'.$his["date"].'</div>
+    <div class="status marg">'.$his["status"].' </div>
+    <div class="comment marg">'.$his["comment"].'</div>
+    </div>';
+}
+
+?>
+        
     </div>
     <div class="table_down">
         <div class="table_down_left">

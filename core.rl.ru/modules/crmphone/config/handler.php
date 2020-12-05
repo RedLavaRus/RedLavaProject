@@ -84,10 +84,14 @@ class Handler
     }
 
     public function importclient($url){
+        
         $this->showLeftMenu($url);
         $this->showTopMenu($url);
-        $this->showContent($url);
-        $this->bild($url);
+        
+        $view = new \Core\Template\Temp;
+        $view->ViewCastom("defaults","lc","tmenu");
+        $view->ViewCastom("defaults","crmphone","addclient");
+        $view->ViewCastom("defaults","lc","lmenu");
     }
 
     public function showLeftMenu($url){
@@ -157,6 +161,14 @@ class Handler
           //var_dump( $orm ->object());
 
           self::$clientinfo = $orm->object();
+    }
+
+    public function bildAddXML($url){
+        $view = new \Core\Template\Temp;
+        $view->ViewCastom("defaults","lc","tmenu");
+        $view->ViewCastom("defaults","crmphone","addclient");
+        $view->ViewCastom("defaults","lc","lmenu");
+
     }
 
 }
