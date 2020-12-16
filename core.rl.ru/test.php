@@ -45,8 +45,8 @@ class Test
         ->add("group_name","VARCHAR","255","not null","Класс страницы");
         $dd ->execute();*/
 
-        $dd = new \Modules\UserGroup\Config\Handler;
-        var_dump($dd -> showGroup());
+        $dd = new \Modules\ExpansionUser\Config\Handler;
+        var_dump($dd -> showFIO(25, "min"));
     }
 }
 

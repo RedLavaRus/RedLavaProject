@@ -13,5 +13,9 @@
         <div class="work_zone">
             <nav>
                 <div class="item_nav">Агент</div>
-                <div class="item_nav">Гакман Владлена</div>
+                <div class="item_nav">
+                <?php
+                $dd = new \Modules\ExpansionUser\Config\Handler;
+                echo $dd -> showFIO(25, "min");
+                ?></div>
             </nav>
