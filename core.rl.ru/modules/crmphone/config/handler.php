@@ -190,7 +190,75 @@ class Handler
         return unserialize($array);
     }
     public function analysisHistory($array){
+
         return serialize($array);
     }
+
+    public function ruStatus($status){
+        switch($status){
+            case "no_reply":
+                return "Не ответил";
+                break;
+                
+            case "Unavailable":
+                return "Недоступен";
+                break;
+                
+            case "ttk":
+                return "Абонент ТТК";
+                break;
+                
+            case "No_DHW":
+                return "Нет ТХВ";
+                break;
+                
+            case "envelope":
+                return "Конверт";
+                break;
+                
+            case "refusal":
+                return "Отказ";
+                break;
+                
+            case "rude_refusal":
+                return "Грубый отказ";
+                break;
+                
+            case "thinks":
+                return "Думает";
+                break;
+                
+            case "application":
+                return "Заявка";
+                break;
+
+            default:
+                return "Ошибка";
+        }
+    }
+    public function createHistory($array){
+        $array_hist = $this->creatingStory($array);
+        $result = null;
+        foreach($array_hist as  $his){
+            $login = $his["id_agent"];
+
+           $namer = new \Modules\ExpansionUser\Config\Handler;
+           $name_auth = $namer->showFIO($login,"min");
+
+            $date = date("d-m-Y",$his["date"]);
+
+            $status = $this->ruStatus($his["status"]);
+
+            
+
+            $result[] = '<div class="form_left ">'.$name_auth.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="data ">'.$date.'</div>
+            <div class="status marg">'.$status.' </div>
+            <div class="comment marg">'.$his["comment"].'</div>
+            </div>';
+        }
+        return $result;
+    }
+
 
 }

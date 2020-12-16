@@ -43,8 +43,8 @@ $array_history = unserialize( $sl["history"] );
     <?php
     
     
-    $array[0]["id_agent"] = "Гакман Владлена";
-    $array[0]["date"] = "01.10.20";
+    $array[0]["id_agent"] = 25;
+    $array[0]["date"] = time();
     $array[0]["status"] = "думает";
     $array[0]["comment"] = "Абоненту интересно, советуется с женой, звонить 05.10.20";
     $ttr = serialize($array);
@@ -53,14 +53,13 @@ $array_history = unserialize( $sl["history"] );
 ?>
     <div class="table_up">
     <?php
-foreach($array_hist as  $his){
+
+$hisd = new \Modules\CRMPhone\Config\Handler;
+$red_his = $hisd->createHistory($sl["history"]);
+foreach($red_his as  $his1){
     
 
-    echo '<div class="form_left ">'.$his["id_agent"].'
-    <div class="data ">'.$his["date"].'</div>
-    <div class="status marg">'.$his["status"].' </div>
-    <div class="comment marg">'.$his["comment"].'</div>
-    </div>';
+    echo $his1;
 }
 
 ?>
