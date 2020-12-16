@@ -37,7 +37,16 @@ class Test
         func = importclient,
         Описание =импорт клиента
         ")            
-        ->from("router")->execute();*/
+        ->from("router")->execute();
+
+        $dd = new \Core\Orm\Create;
+        $dd -> create("user_group")
+        ->add("id_user","VARCHAR","255","not null","Урл страницы")
+        ->add("group_name","VARCHAR","255","not null","Класс страницы");
+        $dd ->execute();*/
+
+        $dd = new \Modules\UserGroup\Config\Handler;
+        var_dump($dd -> showGroup());
     }
 }
 
