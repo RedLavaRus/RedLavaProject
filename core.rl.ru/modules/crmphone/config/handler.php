@@ -181,9 +181,16 @@ class Handler
         $view->ViewCastom("defaults","lc","lmenu");
 
     }
+
+    
+    //var_dump($ttr);echo "<br><br><br>";
+    
     public function creatingStory($array){
+        
+        return unserialize($array);
     }
     public function analysisHistory($array){
+        return serialize($array);
     }
 
 }
