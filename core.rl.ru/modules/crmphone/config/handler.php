@@ -79,8 +79,13 @@ class Handler
     
     }
     public function start($url){
-        $this->showContentClient($url);
+      if(isset($url["post"]) and $url["post"] != null){
+        $this->genuUpdateClient($url);
+      }else{
+          $this->showContentClient($url);
+      }
         //$this->bild($url);
+
     }
 
     public function importclient($url){
@@ -141,7 +146,7 @@ class Handler
     }
 
     public function showContentClient($url){
-        var_dump($url);
+        
         $this->showLeftMenu($url);
         $this->showTopMenu($url);
         $this->genClient($url);
@@ -154,13 +159,19 @@ class Handler
     public function genClient($url){
         
         $orm = new Orm;
-        $orm->select("region,sity,adres,fio,phone1,phone2,phone3,phone4,history")
+        $orm->select("id,region,sity,adres,fio,phone1,phone2,phone3,phone4,history")
         ->where("
         id = 1"
           )->from("crm_phone_base")->limit(1)->execute()->object();
           //var_dump( $orm ->object());
 
           self::$clientinfo = $orm->object();
+    }
+    public function genuUpdateClient($url){
+
+        var_dump($url);
+        //update
+        $this->showContentClient($url);
     }
 
     public function bildAddXML($url){
@@ -169,6 +180,10 @@ class Handler
         $view->ViewCastom("defaults","crmphone","addclient");
         $view->ViewCastom("defaults","lc","lmenu");
 
+    }
+    public function creatingStory($array){
+    }
+    public function analysisHistory($array){
     }
 
 }

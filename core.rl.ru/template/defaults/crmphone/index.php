@@ -3,6 +3,7 @@ foreach(\Modules\CRMPhone\Config\Handler::$clientinfo->object as $ct){
     
     $sl = $ct;
 }
+//var_dump($ct);
 //$string = serialize( $array );
 
 $array_history = unserialize( $sl["history"] );
@@ -68,22 +69,23 @@ foreach($array_hist as  $his){
     <div class="table_down">
         <div class="table_down_left">
             <div class="box">
-                <label> <p class="input"><input name="dzen" type="radio" value="no_reply"> Не ответил</p></label>
+                <label> <p class="input"><input name="dzen" type="radio" value="no_reply" checked> Не ответил</p></label>
                 <p class="input"><input name="dzen" type="radio" value="Unavailable"> Недоступен</p>
-                <p class="input"><input name="dzen" type="radio" value="ttk" checked>Абонент ТТК</p>
+                <p class="input"><input name="dzen" type="radio" value="ttk" >Абонент ТТК</p>
                 <p class="input"><input name="dzen" type="radio" value="No_DHW"> Нет ТХВ</p>
             </div>
             <div class="box">
                 <p class="input"><input name="dzen" type="radio" value="envelope"> Конверт</p>
-                <p class="input"><input name="dzen" type="radio" value="refusal" checked> Отказ</p>
+                <p class="input"><input name="dzen" type="radio" value="refusal" > Отказ</p>
                 <p class="input"><input name="dzen" type="radio" value="rude_refusal"> Грубый отказ</p>
                 <p class="input"><input name="dzen" type="radio" value="thinks"> Думает</p>
-                <p class="input"><input name="dzen" type="radio" value="application" checked>Заявка</p>
+                <p class="input"><input name="dzen" type="radio" value="application" >Заявка</p>
             </div>
         </div>
         <div class="table_down_right">
             Дата следующего действия
-            <input class="form_rigt_input" type="text" size="40">
+            <input class="form_rigt_input" type="text" size="40" name="date_lts">
+            <input  type="hidden"  size="40" name="id" value="<?php echo $sl["id"];?>">
             <p>Комментарий
                 <Br>
                 <textarea class="form_rigt_area" name="comment" cols="40" rows="3"></textarea></p>
