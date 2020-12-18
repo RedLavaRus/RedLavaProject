@@ -43,10 +43,28 @@ class Test
         $dd -> create("user_group")
         ->add("id_user","VARCHAR","255","not null","Урл страницы")
         ->add("group_name","VARCHAR","255","not null","Класс страницы");
-        $dd ->execute();*/
+        $dd ->execute();
 
         $dd = new \Modules\ExpansionUser\Config\Handler;
-        var_dump($dd -> showFIO(25, "min"));
+        var_dump($dd -> showFIO(25, "min"));*/
+
+
+        $id = 1;
+        $orm = new \Core\Orm\Orm;
+        $dts = $orm->select("id,region,sity,adres,fio,phone1,phone2,phone3,phone4,history")
+        ->where("
+        id = $id"
+          )->from("crm_phone_base")->limit(1)->execute()->object();
+
+        foreach($dts->object as $ct){
+    
+            $sl = $ct;
+        }
+        $oldHistory = unserialize($sl["history"]);  
+        foreach($oldHistory as $his){
+          var_dump($his,"<br>");
+          echo 1;
+        }
     }
 }
 

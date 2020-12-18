@@ -5,8 +5,9 @@ foreach(\Modules\CRMPhone\Config\Handler::$clientinfo->object as $ct){
 }
 //var_dump($ct);
 //$string = serialize( $array );
-
-$array_history = unserialize( $sl["history"] );
+$help = new \Modules\CRMPhone\Config\Handler;
+//var_dump($sl["history"]);
+$array_history =$help-> creatingStory( $sl["history"] );
 
 
 ?>
@@ -56,12 +57,14 @@ $array_history = unserialize( $sl["history"] );
 
 $hisd = new \Modules\CRMPhone\Config\Handler;
 $red_his = $hisd->createHistory($sl["history"]);
+if(empty($red_his)) {echo "ПУСТО";
+}else{
 foreach($red_his as  $his1){
     
 
     echo $his1;
 }
-
+}
 ?>
         
     </div>

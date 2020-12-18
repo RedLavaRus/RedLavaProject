@@ -159,9 +159,10 @@ class Handler
     public function genClient($url){
         
         $orm = new Orm;
+        $time_date_its = time();
         $orm->select("id,region,sity,adres,fio,phone1,phone2,phone3,phone4,history")
         ->where("
-        id = 1"
+        date_last = 1"
           )->from("crm_phone_base")->limit(1)->execute()->object();
           //var_dump( $orm ->object());
 
@@ -169,9 +170,98 @@ class Handler
     }
     public function genuUpdateClient($url){
 
-        var_dump($url);
+        //var_dump($url);
         //update
+        $this->updateHistoryList($this->createNewHistory($url));
+
         $this->showContentClient($url);
+
+    }
+    public function createNewHistory($url){
+        //var_dump($url);
+        $id = $url["post"]["id"];
+        $orm = new Orm;
+        $dts = $orm->select("id,region,sity,adres,fio,phone1,phone2,phone3,phone4,history")
+        ->where("
+        id = $id"
+          )->from("crm_phone_base")->limit(1)->execute()->object();
+          foreach($dts->object as $ct){
+    
+            $sl = $ct;
+        }
+        $total_his = null;
+        $oldHistory = $this->creatingStory($sl["history"]);  
+        if(empty($oldHistory)) {
+            
+        }else{
+        foreach($oldHistory as $his){
+            $total_his[] = $his;
+        }
+        }
+        $mallArray["status"]= $url["post"]["dzen"];
+        $date_d1 = $url["post"]["date_lts"];
+        $mallArray["comment"]= $url["post"]["comment"];
+        $mallArray["id_agent"]= $_SESSION["id"];
+        
+        switch($mallArray["status"]){
+            case "no_reply":
+                $n = 7;
+                break;
+                
+            case "Unavailable":
+                $n = 30;
+                break;
+                
+            case "ttk":
+                $n = 360;
+                break;
+                
+            case "No_DHW":
+                $n = 360;
+                break;
+                
+            case "envelope":
+                $n = 90;
+                break;
+                
+            case "refusal":
+                $n = 90;
+                break;
+                
+            case "rude_refusal":
+                $n = 360;
+                break;
+                
+            case "thinks":
+                $n = 1;
+                break;
+                
+            case "application":
+                $n = 360;
+                break;
+
+            default:
+                $n = 999;
+        }
+
+        $nextSteap = time() + (86400 * $n);
+        var_dump($nextSteap );
+        $mallArray["date"]=time();
+        $total_his[] = $mallArray;
+        
+        $res = $this->analysisHistory($total_his);
+        //var_dump("<pre>",$res);
+        $orm1 = new Orm;
+        $orm1->update("history = $res")->where("
+        id = $id"
+          )->from("crm_phone_base")->execute();
+          $orm2 = new Orm;  
+          $orm2->update("date_last = $nextSteap")->where("
+          id = $id"
+            )->from("crm_phone_base")->execute();
+    }
+    public function updateHistoryList($array){
+        
     }
 
     public function bildAddXML($url){
@@ -239,6 +329,8 @@ class Handler
     public function createHistory($array){
         $array_hist = $this->creatingStory($array);
         $result = null;
+        if(empty($array_hist)) return null;
+        
         foreach($array_hist as  $his){
             $login = $his["id_agent"];
 
