@@ -37,5 +37,18 @@ class Handler
         }
         return $group;
     }
+
+    public function showPEX($id){
+        $array_group = $this->returnGroupName($id);
+        foreach($array_group as $arr)
+        {
+            $orm = new Orm;
+            $result_sql = $orm->select("type_usr")
+            ->where("name = $arr")
+            ->from("permission")->execute()->object();
+            $resulter[] = $result_sql->object;
+        }
+        return $resulter;
+    }
 }
 ?>

@@ -15,6 +15,24 @@ Red Lava All Service
 
 
 План-------->
+
+Добавить в  user
+
+returnUserId +
+returnUserLogin +
+
+returnListUserGroup - вернуть список груп пользователя
+returnListUserInGroup - вернуть список пользователей в группе
+
+returnPexGroup - вернуть список привелегий группы
+returnPexUser - вернутрь список привелегий пользователя
+
+accessRights - вернет true или false
+displayRight - если нет права запускается ошибка 403
+
+
+
+
 0.6
 Добавить личный кабинет
 

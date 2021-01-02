@@ -46,7 +46,7 @@ class Test
         $dd ->execute();
 
         $dd = new \Modules\ExpansionUser\Config\Handler;
-        var_dump($dd -> showFIO(25, "min"));*/
+        var_dump($dd -> showFIO(25, "min"));
 
 
         $id = 1;
@@ -65,6 +65,10 @@ class Test
           var_dump($his,"<br>");
           echo 1;
         }
+*/
+        $mdr = new \Modules\Permission\Config\Handler;
+        $res = $mdr->returnGroupName($_SESSION["id"]);
+        var_dump($res );
     }
 }
 
