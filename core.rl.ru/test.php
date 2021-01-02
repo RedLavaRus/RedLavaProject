@@ -70,8 +70,8 @@ class Test
         $res = $mdr->returnGroupName($_SESSION["id"]);
         var_dump($res );*/
 
-        $mdr = new \Modules\UserGroup\Config\Handler;
-        $res = $mdr->returnListUserInGroup("admin");
+        $mdr = new \Core\Permission\Config\Handler;
+        $res = $mdr->returnPexUser($_SESSION["id"]);
         var_dump("<pre>",$res );
     }
 }

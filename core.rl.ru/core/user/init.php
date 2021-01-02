@@ -19,11 +19,7 @@ class Init
         ->add("date_lust_auth","VARCHAR","255","null","Дата последнего входа");
         $user ->execute();
 
-        $group = new Create();
-        $group -> create("group_permission")
-        ->add("name","VARCHAR","255","not null","Название группы")
-        ->add("permission","text","","not null","печерень привелегий, через запятую");
-        $group ->execute();
+ 
 
         $group_users = new Create();
         $group_users -> create("group_users")
