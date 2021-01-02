@@ -85,13 +85,13 @@ class Router
             if (end($url["url"]) != $u) $res_url .= "/";
         }
         $dd = new Orm();
-        $dd -> select("class,func")
+        $dd -> select("class,func,permission")
         ->from("router")
         ->where("url = ".$res_url)
         ->execute()->object();
 
         if(!isset($dd->object[0]) or $dd->object[0] == null) \Core\Errors\E404::show();
-
+        if(!\Core\Permission\Config\Right::accessRights( $dd->object[0]["permission"]) ) \Core\Errors\E403::show();
         return $dd->object[0];
     }
     /*
@@ -103,3 +103,4 @@ class Router
         die();
     }
 }
+

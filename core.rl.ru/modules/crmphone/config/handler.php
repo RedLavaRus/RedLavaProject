@@ -105,13 +105,16 @@ class Handler
         $db_tb = $orm->select("id,group,url,name,class,permission")
         ->from("lc_lmenu")->execute()->object();
         $x=0;
+        
         foreach($db_tb->object as $item){
-            
+            if(\Core\Permission\Config\Right::accessRights($item["permission"]))
+            {
             $leftMenuArray[$x]["id"] = $item["id"];
             $leftMenuArray[$x]["url"] = $item["url"];
             $leftMenuArray[$x]["name"] = $item["name"];
             $leftMenuArray[$x]["class"] = $item["class"];
             $leftMenuArray[$x]["group"] = $item["group"];
+            }
             $x++;
         }
 

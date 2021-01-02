@@ -6,10 +6,20 @@ use Core\Orm\Create as Create;
 class Right
 {
     public static function accessRights($right){
+        if($right == "all") return true;
+        if($right == "auth" ){
+            if(isset($_SESSION["id"]) and $_SESSION["id"]>= 1) {
+                return true;
+            }else{
+                return false;
+            }
+        }
         $mdr = new \Core\Permission\Config\Handler;
         $res = $mdr->returnPexUser($_SESSION["id"]);
-
-       return  in_array($right,$res);
+        //var_dump($_SESSION["id"]);
+        if($res == null) return false;
+        if(in_array("admin",$res)) return true;
+        return  in_array($right,$res);
     }
 
     public static  function displayRight(){

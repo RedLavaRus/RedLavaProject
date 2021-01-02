@@ -24,12 +24,17 @@ returnUserLogin +
 returnListUserGroup +
 returnListUserInGroup +
 
-returnPexGroup - вернуть список привелегий группы
-returnPexUser - вернутрь список привелегий пользователя
+returnPexGroup + вернуть список привелегий группы
+returnPexUser + вернутрь список привелегий пользователя
 
 accessRights - вернет true или false
 displayRight - если нет права запускается ошибка 403
 
+проверка элементов согласно ролям +
+загрузка страниц по ролям +
+
+смена пароля
+смена ФИО
 
 
 

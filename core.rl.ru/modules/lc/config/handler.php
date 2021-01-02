@@ -67,11 +67,15 @@ class Handler
         
         $x=0;
         foreach($db_tb->object as $item){
+            if(\Core\Permission\Config\Right::accessRights($item["permission"]))
+           {
+                //echo $item["permission"]."<br>";
             $leftMenuArray[$x]["id"] = $item["id"];
             $leftMenuArray[$x]["url"] = $item["url"];
             $leftMenuArray[$x]["name"] = $item["name"];
             $leftMenuArray[$x]["class"] = $item["class"];
             $leftMenuArray[$x]["group"] = $item["group"];
+            }
             $x++;
         }
 

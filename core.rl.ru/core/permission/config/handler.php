@@ -34,7 +34,7 @@ class Handler
 
     //вернутрь список привелегий пользователя
     public function returnPexUser($id){
-
+        $rexlist = null;
         $groupin = new \Modules\UserGroup\Config\Handler;
         $listgroup = $groupin -> returnListUserGroup($id);
 
@@ -42,7 +42,7 @@ class Handler
         foreach($listgroup  as $nameGroup){
             $pex[] = $this->returnPexGroup($nameGroup["group_name"]);
         }
-
+        if(isset($pex)){
         foreach($pex as $p)
         {
             if(isset($p)){
@@ -52,7 +52,7 @@ class Handler
                 }
             }
         }
-            
+        }    
             return $rexlist;
 
     }
