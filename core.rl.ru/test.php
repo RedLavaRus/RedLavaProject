@@ -69,10 +69,14 @@ class Test
         $mdr = new \Modules\Permission\Config\Handler;
         $res = $mdr->returnGroupName($_SESSION["id"]);
         var_dump($res );*/
+        \Core\Permission\Config\Right::displayRight();
 
         $mdr = new \Core\Permission\Config\Handler;
         $res = $mdr->returnPexUser($_SESSION["id"]);
         var_dump("<pre>",$res );
+
+        var_dump(\Core\Permission\Config\Right::accessRights("admin3"));
+
     }
 }
 
