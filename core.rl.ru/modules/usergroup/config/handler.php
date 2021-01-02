@@ -37,5 +37,21 @@ class Handler
         }
         return $group;
     }
+    public function returnListUserGroup($id){
+        $orm = new Orm;
+        $result_sql = $orm->select("group_name")
+        ->where("id_user = $id")
+        ->from("user_group")->execute()->object();
+
+        return $result_sql->object;
+    }
+    public function returnListUserInGroup($group_name){
+        $orm = new Orm;
+        $result_sql = $orm->select("id_user")
+        ->where("group_name = $group_name")
+        ->from("user_group")->execute()->object();
+
+        return $result_sql->object;
+    }
 }
 ?>

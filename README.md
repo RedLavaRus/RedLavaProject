@@ -21,8 +21,8 @@ Red Lava All Service
 returnUserId +
 returnUserLogin +
 
-returnListUserGroup - вернуть список груп пользователя
-returnListUserInGroup - вернуть список пользователей в группе
+returnListUserGroup +
+returnListUserInGroup +
 
 returnPexGroup - вернуть список привелегий группы
 returnPexUser - вернутрь список привелегий пользователя

@@ -65,10 +65,14 @@ class Test
           var_dump($his,"<br>");
           echo 1;
         }
-*/
+
         $mdr = new \Modules\Permission\Config\Handler;
         $res = $mdr->returnGroupName($_SESSION["id"]);
-        var_dump($res );
+        var_dump($res );*/
+
+        $mdr = new \Modules\UserGroup\Config\Handler;
+        $res = $mdr->returnListUserInGroup("admin");
+        var_dump("<pre>",$res );
     }
 }
 
