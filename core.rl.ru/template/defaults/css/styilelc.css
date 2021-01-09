@@ -275,11 +275,124 @@ p {
     margin: 0 30px;
 }
 
+.title_blok {
+    width: 100%;
+    margin: 20px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.title {
+    padding: 5px 0 0 5px;
+    width: 290px;
+    height: 150px;
+    font-size: 24px;
+    background-color: #777777;
+    border-radius: 5px;
+    margin: 10px 10px 5px 10px;
+}
+
+.but {
+    background-color: #ffffff;
+    width: 175px;
+    height: 35px;
+    margin: 55px auto;
+    text-align: center;
+    justify-content: center;
+    border-radius: 3px;
+    font-size: 22px;
+    padding: 5px 0 0 0;
+}
+
+.color_crimson {
+    background-color: #DC143C;
+}
+
+.color_coral {
+    background-color: #FF7F50;
+}
+
+.color_orange {
+    background-color: #FFA500;
+}
+
+.color_gold {
+    background-color: #FFD700;
+}
+
+.color_limegreen {
+    background-color: #32CD32;
+}
+
+.color_mediumseagreen {
+    background-color: #3CB371;
+}
+
+.color_darkturquoise {
+    background-color: #00CED1;
+}
+
+.color_deepskyblue {
+    background-color: #00BFFF;
+}
+
+.color_violet {
+    background-color: #EE82EE;
+}
+
+.color_mediumpurple {
+    background-color: #9370DB;
+}
+
+.windows_action_1200 {
+    width: 1200px;
+    min-height: 100px;
+    background-color: #E5E5E5;
+    position: absolute;
+    border: 1px solid #545454;
+    margin: 20px;
+    border-radius: 5px;
+    z-index: 0;
+}
+
+.windiws_passiv_zone {
+    width: 1150px;
+    margin: 0 auto;
+}
+
+.button_box_windows {
+    order: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0;
+}
+
+.windows_action_600 {
+    min-height: 100px;
+    background-color: #E5E5E5;
+    position: absolute;
+    border: 1px solid #545454;
+    margin: 20px;
+    border-radius: 5px;
+    width: 600px;
+    z-index: 1;
+}
+
+.windiws_passiv_zone_600 {
+    width: 550px;
+    margin: 0 auto;
+}
+
+
+}
 @media screen and (max-width: 980px) {
     main {
         display: flex;
         flex-direction: column;
     }
+    
     menu {
         display: flex;
         flex-direction: column;
@@ -290,39 +403,50 @@ p {
         color: #ffffff;
         border-radius: 5px;
     }
+    
     hr {
         display: none;
     }
+    
     .item_menu {
         margin: 10px 0;
         font-size: 50px;
     }
+    
     nav {
         margin: 20px 0 0 0;
     }
+    
     .item_nav {
         font-size: 40px;
     }
+    
     .table {
         width: 100%;
     }
+    
     h1 {
         margin: 20px auto 0;
         font-size: 60px;
     }
+    
     .work_zone {}
+    
     .table_up {
         width: 480px;
         height: 600px;
     }
+    
     .form {
         width: 400px;
         height: 90px;
     }
+    
     .table_down {
         justify-content: space-between;
         height: 400px;
         width: 970px;
     }
+    
     .table_down_left {}
 }

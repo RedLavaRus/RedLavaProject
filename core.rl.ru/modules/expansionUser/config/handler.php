@@ -32,14 +32,17 @@ class Handler
         //var_dump("<pre>",$res_io->object[0]["id_user"]);
         switch ($type) {
             case "full":
+                if(!isset($res_io->object[0]["last_name"]) or $res_io->object[0]["last_name"] == null) return "НЕИЗВЕСТНЫЙ ЖИРАФ";
                 return $res_io->object[0]["last_name"]." ".$res_io->object[0]["name"]." ".$res_io->object[0]["name_patronymic"];
                 break;
 
             case "name"://mb_substr($name,0,1,"UTF-8")
+                if(!isset($res_io->object[0]["last_name"]) or $res_io->object[0]["last_name"] == null) return "НЕИЗВЕСТНЫЙ ЖИРАФ";
                 return $res_io->object[0]["name"];
                 break;
 
             case "min":
+                if(!isset($res_io->object[0]["last_name"]) or $res_io->object[0]["last_name"] == null) return "НЕИЗВЕСТНЫЙ ЖИРАФ";
                 return $res_io->object[0]["last_name"]." ".mb_substr($res_io->object[0]["name"],0,1,"UTF-8").". ".mb_substr($res_io->object[0]["name_patronymic"],0,1,"UTF-8").". ";
                 break;
                 

@@ -16,6 +16,6 @@
                 <div class="item_nav">
                 <?php
                 $dd = new \Modules\ExpansionUser\Config\Handler;
-                echo $dd -> showFIO(25, "min");
+                echo $dd -> showFIO($_SESSION["id"], "min");
                 ?></div>
             </nav>
