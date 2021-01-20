@@ -206,6 +206,7 @@ class Handler
         $mallArray["comment"]= $url["post"]["comment"];
         $mallArray["id_agent"]= $_SESSION["id"];
         
+        //var_dump( $date_d1);
         switch($mallArray["status"]){
             case "no_reply":
                 $n = 7;
@@ -247,8 +248,14 @@ class Handler
                 $n = 999;
         }
 
-        $nextSteap = time() + (86400 * $n);
-        var_dump($nextSteap );
+        //$lust = substr(date('UTC', strtotime($date_d1)),0,10);
+        if($date_d1 == 0){
+            $nextSteap = time() + (86400 * $n);
+        }else{
+            $nextSteap   = substr(date('UTC', strtotime($date_d1)),0,10);
+        }
+        
+        var_dump($date_d1 );
         $mallArray["date"]=time();
         $total_his[] = $mallArray;
         

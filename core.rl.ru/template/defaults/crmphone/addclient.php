@@ -4,8 +4,97 @@
 <div >
 
 <?php
+$type_bd = "warp";
 $xml = simplexml_load_file(MYPOS."/res/crmphone/base.xml");
+//var_dump("<pre>",$xml);
+$x=0;
+foreach($xml->Worksheet->Table->Row as $row){
+    $x++;
+    if($x != 1){
+        $sity[$x] = (string)$row->Cell[0]->Data[0];//Город
+        $dogovor[$x] = (string)$row->Cell[1]->Data[0];//дОГОВОР
+        $fio[$x] = (string)$row->Cell[2]->Data[0];//ФиО
+        $phone[$x][] = (string)$row->Cell[3]->Data[0];//телефон
+        $phone[$x][] =(string) $row->Cell[4]->Data[0];//телефон
+        $adress[$x] = (string)$row->Cell[5]->Data[0];//"г. Краснодар, Валерия Гассия ул., дом. 4/4, кв. 23"
+               
+    }
+}
+$phone_nice=null;
+$z=2;
+foreach($phone as $ar_phone1)
+{
+    foreach($ar_phone1 as $ar_phone2)
+    {
+       $str_phone = substr($ar_phone2, 0, 11);
+       
+        if($str_phone >= 11111111111) {
 
+            if(!isset($phone_nice[$z][0])) {
+                $phone_nice[$z][] = $str_phone;
+            }
+            elseif($phone_nice[$z][0] != $str_phone){
+                $phone_nice[$z][] = $str_phone;
+            }           
+        }
+    }
+    $z++;
+    
+}
+//var_dump("<pre>",$phone_nice);
+
+$temp_num =2;
+foreach($phone as $tempser){
+    //foreach($phone_nice[$temp_num] as $lust_phs)
+    $phone1_ac = null;
+    $orm=  new \Core\Orm\Orm;
+    $id = $orm->select("id")
+    ->where("
+    phone1 = ".$phone_nice[$temp_num][0]
+    
+     )->from("crm_phone_base")->execute()->object();
+
+        if(isset($id->object[0]["id"]) and $id->object[0]["id"] >= 1) 
+        {
+            
+        }else{
+            $time=time();
+            $phone_d1 = $phone_nice[$temp_num][0];
+            if(isset($phone_nice[$temp_num][1])){$phone_d2 = $phone_nice[$temp_num][1];}else{$phone_d2 = "пусто";}
+            if(isset($phone_nice[$temp_num][2])){$phone_d3 = $phone_nice[$temp_num][2];}else{$phone_d3 = "пусто";}
+            if(isset($phone_nice[$temp_num][3])){$phone_d4 = $phone_nice[$temp_num][3];}else{$phone_d4 = "пусто";}
+
+            $sity[$temp_num] = str_replace(",",".",$sity[$temp_num]);
+            $adress[$temp_num] = str_replace(",",".",$adress[$temp_num]);
+            $fio[$temp_num] = str_replace(",",".",$fio[$temp_num]);
+
+            $sity[$temp_num] = str_replace("'","\"",$sity[$temp_num]);
+            $adress[$temp_num] = str_replace("','","\"",$adress[$temp_num]);
+            $fio[$temp_num] = str_replace("','","\"",$fio[$temp_num]);
+
+
+
+            $orm=  new \Core\Orm\Orm;
+            $test = $orm->insert("
+                region = КАВКАЗ,
+                sity = ".$sity[$temp_num].",
+                adres = ".$adress[$temp_num].",
+                fio = ".$fio[$temp_num].",
+                phone1 = ".$phone_d1.",
+                phone2 = ".$phone_d2.",
+                phone3 = ".$phone_d3.",
+                phone4 = ".$phone_d4.",
+                type = ".$type_bd.",
+                date_add = ".$time.",
+                contract_number = ".$dogovor[$temp_num]."
+            ")            
+            ->from("crm_phone_base")->execute();
+            //var_dump("<pre>",$test,"</pre><br><br><br><br>");
+        }
+
+$temp_num ++;
+};
+/*
 //var_dump("<pre>",$xml->Worksheet->Table->Row);
 $x=0;
 foreach($xml->Worksheet->Table->Row as $row){
@@ -108,6 +197,7 @@ if($phone_a1 == ""){$phone_a1 = $phone_a2; $phone_a2 = "пусто";}
     $rrr++;
 }
 }
+*/
 
 ?>
 

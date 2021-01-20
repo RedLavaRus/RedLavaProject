@@ -86,7 +86,7 @@ foreach($red_his as  $his1){
         </div>
         <div class="table_down_right">
             Дата следующего действия
-            <input class="form_rigt_input" type="text" size="40" name="date_lts">
+            <input class="form_rigt_input"  type="datetime-local" size="40" name="date_lts">
             <input  type="hidden"  size="40" name="id" value="<?php echo $sl["id"];?>">
             <p>Комментарий
                 <Br>
