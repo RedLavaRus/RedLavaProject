@@ -390,6 +390,52 @@ p {
     margin: 0 auto;
 }
 
+table {
+    margin: 30px 0 0 0;
+    width: 920px;
+    text-align: center;
+}
+
+.blue1 {
+    padding: 2px 0 0 0;
+    background-color: #3F717C;
+}
+
+.blue2 {
+    padding: 2px 0 0 0;
+    background-color: #7DD3E5;
+}
+
+.close {
+    padding: 5px 0 0 0;
+    background-color: #DF6C6C;
+}
+
+.status_red {
+    background-color: #DF6C6C;
+}
+
+.status_green {
+    background-color: #9CDD7D;
+}
+
+.status_yellow {
+    background-color: #EBE07E;
+}
+
+td {
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.tr_acm {
+    border-spacing: 10px;
+}
+
+.head_acm {
+    background-color: transparent;
+}
+
 
 }
 @media screen and (max-width: 980px) {
