@@ -68,14 +68,32 @@ class Test
 
         $mdr = new \Modules\Permission\Config\Handler;
         $res = $mdr->returnGroupName($_SESSION["id"]);
-        var_dump($res );*/
+        var_dump($res );
         \Core\Permission\Config\Right::displayRight();
 
         $mdr = new \Core\Permission\Config\Handler;
         $res = $mdr->returnPexUser($_SESSION["id"]);
         var_dump("<pre>",$res );
 
-        var_dump(\Core\Permission\Config\Right::accessRights("admin3"));
+        var_dump(\Core\Permission\Config\Right::accessRights("admin3"));*/
+        $orm = new \Core\Orm\Orm;
+        $orm->insert("
+        group = default,
+        url =  /lc/thinks/,
+        name = Потанцеальные клиенты,
+        class = item_menu,
+        permission = all
+        ")            
+        ->from("lc_lmenu")->execute();
+
+        $orm3 = new \Core\Orm\Orm;
+        $orm3->insert("
+        url = lc/thinks,
+        class = Modules\CRMPhone\Controller\Thinks,
+        func = start,
+        Описание = Потанцеальные клиенты
+        ")            
+        ->from("router")->execute();
 
     }
 }

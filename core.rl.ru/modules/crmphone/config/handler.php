@@ -265,10 +265,25 @@ class Handler
         $orm1->update("history = $res")->where("
         id = $id"
           )->from("crm_phone_base")->execute();
-          $orm2 = new Orm;  
-          $orm2->update("date_last = $nextSteap")->where("
-          id = $id"
-            )->from("crm_phone_base")->execute();
+
+        $orm2 = new Orm;  
+        $orm2->update("date_last = $nextSteap")->where("
+        id = $id"
+        )->from("crm_phone_base")->execute();
+
+        $ag_id = $_SESSION["id"];
+        $orm3 = new Orm;  
+        $orm3->update("agent_id = $ag_id")->where("
+        id = $id"
+        )->from("crm_phone_base")->execute();
+
+        $sts_name = $mallArray["status"];
+        $orm4 = new Orm;  
+        $orm4->update("status = $sts_name")->where("
+        id = $id"
+        )->from("crm_phone_base")->execute();
+
+        
     }
     public function updateHistoryList($array){
         
