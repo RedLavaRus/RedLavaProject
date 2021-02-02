@@ -48,7 +48,7 @@ class Auth
         login = $login, 
         pass =  $pass 
         "
-          )->from("User")->execute()->object();
+          )->from("user")->execute()->object();
           
           if(isset($id->object[0]["id"]) and $id->object[0]["id"] >= 1) 
           {return "ok:".$id->object[0]["id"];}

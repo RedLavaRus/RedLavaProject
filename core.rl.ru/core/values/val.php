@@ -21,6 +21,8 @@ class Val
     public static $errors;
     public static $er;
 
+    public static $helper;
+
 
 
     public static function addHead($var,$type = null)

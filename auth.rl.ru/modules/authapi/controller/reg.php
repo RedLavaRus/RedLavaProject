@@ -48,7 +48,7 @@ class Reg
         ->where("
         login = $login
         "
-          )->from("User")->execute()->object();
+          )->from("user")->execute()->object();
           //var_dump("<pre>",$id);
           
           if(isset($id->object[0]["id"]) and $id->object[0]["id"] >= 1) 
@@ -88,7 +88,7 @@ class Reg
         login = $login, 
         pass =  $pass 
         "
-          )->from("User")->execute()->object();
+          )->from("user")->execute()->object();
           $ids = $id->object[0]["id"];
           if($ids >= 1) 
           {return "ok:$ids";}

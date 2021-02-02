@@ -67,7 +67,7 @@ class Reg
         ->where("
         login = $login
         "
-          )->from("User")->execute()->object();
+          )->from("user")->execute()->object();
           //var_dump("<pre>",$id);
           
           if(isset($id->object[0]["id"]) and $id->object[0]["id"] >= 1) 

@@ -79,6 +79,7 @@ class Orm
     */
     public function from($table)//m = 1, n =2
     {
+        $table = mb_strtolower($table);
         $this->table = $table;
         return $this;
     }

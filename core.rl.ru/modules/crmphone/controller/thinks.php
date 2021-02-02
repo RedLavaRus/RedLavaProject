@@ -39,6 +39,7 @@ class Thinks
         $mailclass->showLeftMenu($url);
         $mailclass->showTopMenu($url);
         
+        $this->bildBD($url);
         $view = new \Core\Template\Temp;
         $view->ViewCastom("defaults","lc","tmenu");
         $view->ViewCastom("defaults","crmphone","thinks");
@@ -46,12 +47,13 @@ class Thinks
     }
 
     public function bildBD($url){
+        $ses = $_SESSION["id"];
         $orm = new Orm;
-        $time_date_its = time();
-        $orm->select("id,region,sity,adres,fio,phone1,phone2,phone3,phone4,history")
+        \Core\Values\Val::$helper["Thinks"] = $orm->select("id,region,sity,adres,fio,phone1,phone2,phone3,phone4,history,date_last")
         ->where("
-        date_last = 1"
-          )->from("crm_phone_base")->limit(1)->execute()->object();
+        agent_id = $ses"
+          )->from("crm_phone_base")->limit(50)->execute()->object();
+        
     }
 
 }

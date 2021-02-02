@@ -143,7 +143,9 @@ class Orm
                     $s++;
                 }
             }
-            if($this->atribut != null) $this->query .= " ".$this->atribut." ";
+            
+            
+            if($this->atribut != null) $this->query .= " ".mb_strtolower($this->atribut)." ";
                 $this->execute = $this->pdo->prepare($this->query);
                 $this->execute->execute($this->query_value);
             return $this;
