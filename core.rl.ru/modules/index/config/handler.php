@@ -14,8 +14,9 @@ class Handler
          * footer
          */
 
-        $temp = new \Core\Template\Temp;
-        $temp -> View("defaults","/index/index");
+        $view = new \Core\Template\Temp;
+        $view->ViewCastom("defaults","index","headonepage");
+        $view->ViewCastom("defaults","index","onepage");
 
 
 

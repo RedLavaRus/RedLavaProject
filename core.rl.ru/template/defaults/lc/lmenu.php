@@ -12,8 +12,7 @@ $lm = \Modules\Lc\Config\Handler::$lmenu;
     foreach($lm as $l){
 
         echo '
-        <div class="'.$l["class"].'"><a href="'.$l["url"].'">'.$l["name"].'</a></div>
-            <hr size=2px width=250px align="center">
+        <div class="'.$l["class"].'"><a href="'.$l["url"].'"><img src="\template\defaults\img\lmenu\\'.$l["id"].'.png"><br>'.$l["name"].'</a></div>
             ';
     }
     ?>

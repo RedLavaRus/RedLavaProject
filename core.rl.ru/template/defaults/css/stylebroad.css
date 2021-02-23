@@ -8,7 +8,7 @@ body {
     font-family: 'Exo 2', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(45deg, #4056b8, #000d49);
+    background: linear-gradient(45deg, #444E80, #060625);
     display: flex;
     min-height: 100vh;
 }
@@ -29,9 +29,9 @@ body {
 .applications {
     background-image: url(/template/defaults/img/broad/policy.png);
     background-repeat: no-repeat;
-    background-size: 60%;
+    background-size: 45%;
     background-position: center center;
-    width: 100px;
+    width: 120px;
     height: 100px;
     color: #4A4A67;
     display: flex;
@@ -42,9 +42,9 @@ body {
 .connections {
     background-image: url(/template/defaults/img/broad/validity.png);
     background-repeat: no-repeat;
-    background-size: 60%;
+    background-size: 45%;
     background-position: center center;
-    width: 100px;
+    width: 120px;
     height: 100px;
     color: #4A4A67;
     display: flex;
@@ -55,9 +55,9 @@ body {
 .chart {
     background-image: url(/template/defaults/img/broad/targeted.png);
     background-repeat: no-repeat;
-    background-size: 60%;
+    background-size: 45%;
     background-position: center center;
-    width: 100px;
+    width: 120px;
     height: 100px;
     color: #4A4A67;
     display: flex;
@@ -68,9 +68,9 @@ body {
 .training {
     background-image: url(/template/defaults/img/broad/engineer.png);
     background-repeat: no-repeat;
-    background-size: 60%;
+    background-size: 45%;
     background-position: center center;
-    width: 100px;
+    width: 120px;
     height: 100px;
     color: #4A4A67;
     display: flex;
@@ -81,9 +81,9 @@ body {
 .challenge {
     background-image: url(/template/defaults/img/broad/value.png);
     background-repeat: no-repeat;
-    background-size: 60%;
+    background-size: 45%;
     background-position: center center;
-    width: 100px;
+    width: 120px;
     height: 100px;
     color: #4A4A67;
     display: flex;
@@ -94,88 +94,94 @@ body {
 .applications_active {
     background-image: url(/template/defaults/img/broad/policyakt.png);
     background-repeat: no-repeat;
-    background-size: 60%;
+    background-size: 45%;
     background-position: center center;
-    width: 120px;
+    width: 117px;
     height: 100px;
     color: #2EC5A9;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     border-right: 3px solid #2EC5A9;
+    font-weight: 600;
 }
 
 .connections_active {
     background-image: url(/template/defaults/img/broad/validityakt.png);
     background-repeat: no-repeat;
-    background-size: 60%;
+    background-size: 45%;
     background-position: center center;
-    width: 97px;
+    width: 117px;
     height: 100px;
     color: #2EC5A9;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     border-right: 3px solid #2EC5A9;
+    font-weight: 600;
 }
 
 .chart_active {
     background-image: url(/template/defaults/img/broad/targetedakt.png);
     background-repeat: no-repeat;
-    background-size: 60%;
+    background-size: 45%;
     background-position: center center;
-    width: 97px;
+    width: 117px;
     height: 100px;
     color: #2EC5A9;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     border-right: 3px solid #2EC5A9;
+    font-weight: 600;
 }
 
 .training_active {
     background-image: url(/template/defaults/img/broad/engineerakt.png);
     background-repeat: no-repeat;
-    background-size: 60%;
+    background-size: 45%;
     background-position: center center;
-    width: 97px;
+    width: 117px;
     height: 100px;
     color: #2EC5A9;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     border-right: 3px solid #2EC5A9;
+    font-weight: 600;
 }
 
 .challenge_active {
     background-image: url(/template/defaults/img/broad/valueakt.png);
     background-repeat: no-repeat;
-    background-size: 60%;
+    background-size: 45%;
     background-position: center center;
-    width: 97px;
+    width: 117px;
     height: 100px;
     color: #2EC5A9;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     border-right: 3px solid #2EC5A9;
+    font-weight: 600;
 }
 
 .main {
     width: calc(99% - 520px);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .agent {
-    width: 70%;
+    width: 80%;
     height: 50px;
     background-color: #060439;
     margin: 10px 0;
     border-radius: 5px;
     box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.41);
     display: flex;
+    border-left: solid 4px;
 }
 
 .name {
@@ -209,7 +215,7 @@ body {
 
 .progress {
     height: 15px;
-    background: linear-gradient(to right, #ff0000, #09ff01);
+    background: linear-gradient( 90deg, #ff0000 25%, #f5f900 45%, #09ff01 65%);
     background-attachment: fixed;
     margin: 3px 0 0 -3px;
     border-radius: 10px;
@@ -452,4 +458,31 @@ body {
     text-align: center;
     margin: 3px 0 0 0;
     font-weight: 200;
+}
+
+.fff {
+    color: #D73030;
+    color: #E4891E;
+    color: #EDF123;
+    color: #B6EF13;
+    color: #38B419;
+    color: #1CC894;
+    color: #39BCF4;
+    color: #0E6CD9;
+    color: #6268E5;
+    color: #8E38E4;
+    color: #CB38B3;
+    color: #FD8FFF;
+    color: #A84C62;
+    color: #681E1E;
+    color: #FDFFA6;
+    color: #165600;
+    color: #808080;
+    color: #FFFFFF;
+    color: #A8AB03;
+    color: #B2C875;
+    color: #8DDFB3;
+    color: #00CA69;
+    color: #76A1C8;
+    color: #D9265C;
 }

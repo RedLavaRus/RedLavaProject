@@ -1,6 +1,6 @@
 
     <div class="main">
-        <div class="agent">
+        <div class="agent"  style="border-color:#c72a2a ;">
             <div class="name">Иванов<br> Иван</div>
             <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
             <div class="work">
@@ -18,7 +18,7 @@
                 </div>
             </div>
         </div>
-        <div class="agent">
+        <div class="agent" style="border-color:#c72a2a ;">
             <div class="name">Иванов<br> Иван</div>
             <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
             <div class="work">
@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div>
-        <div class="agent">
+        <div class="agent" style="border-color:#c72a2a ;">
             <div class="name">Иванов<br> Иван</div>
             <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
             <div class="work">
@@ -54,7 +54,7 @@
                 </div>
             </div>
         </div>
-        <div class="agent">
+        <div class="agent" style="border-color:#c72a2a ;">
             <div class="name">Иванов<br> Иван</div>
             <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
             <div class="work">
