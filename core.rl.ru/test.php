@@ -93,7 +93,7 @@ class Test
         func = start,
         Описание = Потанцеальные клиенты
         ")            
-        ->from("router")->execute(); */
+        ->from("router")->execute(); 
 
 
         $dd = new \Core\Orm\Create;
@@ -102,6 +102,21 @@ class Test
         ->add("zd_tv","INT","11","not null","ЗАЯВОК НА ТВ")
         ->add("con_shpd","INT","11","not null","ПОДКЛЮЧЕНО ШПД")
         ->add("con_tv","INT","11","not null","ПОДКЛЮЧЕНО ТВ");
+        $dd ->execute();   */     
+        
+        $dd = new \Core\Orm\Create;
+        $dd -> create("broad_znanie")
+        ->add("idagent","INT","11","not null","ИД АГЕНТА")
+        ->add("name1","VARCHAR","11","not null","Название обучения")
+        ->add("stat1","VARCHAR","11","not null","Статус обучения")
+        ->add("name2","VARCHAR","11","not null","Название обучения")
+        ->add("stat2","VARCHAR","11","not null","Статус обучения")
+        ->add("name3","VARCHAR","11","not null","Название обучения")
+        ->add("stat3","VARCHAR","11","not null","Статус обучения")
+        ->add("name4","VARCHAR","11","not null","Название обучения")
+        ->add("stat4","VARCHAR","11","not null","Статус обучения")
+        ->add("name5","VARCHAR","11","not null","Название обучения")
+        ->add("stat5","VARCHAR","11","not null","Статус обучения");
         $dd ->execute();
 
     }

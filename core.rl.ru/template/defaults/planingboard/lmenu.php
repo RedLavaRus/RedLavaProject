@@ -8,6 +8,7 @@ if($url_tech == "connect"){$style["2"] = "connections_active";}else{$style["2"] 
 if($url_tech == "grafic"){$style["3"] = "chart_active";}else{$style["3"] = "chart";}
 if($url_tech == "znanie"){$style["4"] = "training_active";}else{$style["4"] = "training";}
 if($url_tech == "vizov"){$style["5"] = "challenge_active";}else{$style["5"] = "challenge";}
+if($url_tech == "import"){$style["6"] = "challenge_active";}else{$style["5"] = "challenge";}
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,6 +26,7 @@ if($url_tech == "vizov"){$style["5"] = "challenge_active";}else{$style["5"] = "c
             <a href="/broad/grafic/"><div class="<?php echo $style["3"];?>">График</div></a>
             <a href="/broad/znanie/"><div class="<?php echo $style["4"];?>">Обучение</div></a>
             <a href="/broad/vizov/"><div class="<?php echo $style["5"];?>">Вызов</div></a>
+            <a href="/broad/import/"><div class="<?php echo $style["6"];?>">Импорт</div></a>
         </div>
     </div>
 

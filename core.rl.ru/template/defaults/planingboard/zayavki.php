@@ -1,348 +1,66 @@
 
+    <?php
+
+$orm1 = new \Core\Orm\Orm;
+$res1 = $orm1->select("id,zd_shpd,zd_tv,con_shpd,con_tv")
+->from("broad_static")->execute()->object();
+//var_dump("<pre>",$res1->object);
+$arr_color[] =null;
+$dex = 0;
+    
+
+?>
+    
     <div class="main">
-        <div class="agent"  style="border-color:#c72a2a ;">
-            <div class="name">Иванов<br> Иван</div>
-            <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
-            <div class="work">
-                <div class="work_hpd">
-                    <div class="text">ШПД</div>
-                    <div class="progress" style="width: 10%;">
-                        <div class="number ">100</div>
-                    </div>
-                </div>
-                <div class="work_tv">
-                    <div class="text">ТВ</div>
-                    <div class="progress" style="width: 90%;">
-                        <div class="number ">20</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="agent" style="border-color:#c72a2a ;">
-            <div class="name">Иванов<br> Иван</div>
-            <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
-            <div class="work">
-                <div class="work_hpd">
-                    <div class="text">ШПД</div>
-                    <div class="progress">
-                        <div class="number ">100</div>
-                    </div>
-                </div>
-                <div class="work_tv">
-                    <div class="text">ТВ</div>
-                    <div class="progress_tv">
-                        <div class="number ">20</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="agent" style="border-color:#c72a2a ;">
-            <div class="name">Иванов<br> Иван</div>
-            <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
-            <div class="work">
-                <div class="work_hpd">
-                    <div class="text">ШПД</div>
-                    <div class="progress">
-                        <div class="number ">100</div>
-                    </div>
-                </div>
-                <div class="work_tv">
-                    <div class="text">ТВ</div>
-                    <div class="progress_tv">
-                        <div class="number ">20</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="agent" style="border-color:#c72a2a ;">
-            <div class="name">Иванов<br> Иван</div>
-            <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
-            <div class="work">
-                <div class="work_hpd">
-                    <div class="text">ШПД</div>
-                    <div class="progress">
-                        <div class="number ">100</div>
-                    </div>
-                </div>
-                <div class="work_tv">
-                    <div class="text">ТВ</div>
-                    <div class="progress_tv">
-                        <div class="number ">20</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="agent">
-            <div class="name">Иванов<br> Иван</div>
-            <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
-            <div class="work">
-                <div class="work_hpd">
-                    <div class="text">ШПД</div>
-                    <div class="progress">
-                        <div class="number ">100</div>
-                    </div>
-                </div>
-                <div class="work_tv">
-                    <div class="text">ТВ</div>
-                    <div class="progress_tv">
-                        <div class="number ">20</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="agent">
-            <div class="name">Иванов<br> Иван</div>
-            <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
-            <div class="work">
-                <div class="work_hpd">
-                    <div class="text">ШПД</div>
-                    <div class="progress">
-                        <div class="number ">100</div>
-                    </div>
-                </div>
-                <div class="work_tv">
-                    <div class="text">ТВ</div>
-                    <div class="progress_tv">
-                        <div class="number ">20</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="agent">
-            <div class="name">Иванов<br> Иван</div>
-            <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
-            <div class="work">
-                <div class="work_hpd">
-                    <div class="text">ШПД</div>
-                    <div class="progress">
-                        <div class="number ">100</div>
-                    </div>
-                </div>
-                <div class="work_tv">
-                    <div class="text">ТВ</div>
-                    <div class="progress_tv">
-                        <div class="number ">20</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="agent">
-            <div class="name">Иванов<br> Иван</div>
-            <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
-            <div class="work">
-                <div class="work_hpd">
-                    <div class="text">ШПД</div>
-                    <div class="progress">
-                        <div class="number ">100</div>
-                    </div>
-                </div>
-                <div class="work_tv">
-                    <div class="text">ТВ</div>
-                    <div class="progress_tv">
-                        <div class="number ">20</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="agent">
-            <div class="name">Иванов<br> Иван</div>
-            <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
-            <div class="work">
-                <div class="work_hpd">
-                    <div class="text">ШПД</div>
-                    <div class="progress">
-                        <div class="number ">100</div>
-                    </div>
-                </div>
-                <div class="work_tv">
-                    <div class="text">ТВ</div>
-                    <div class="progress_tv">
-                        <div class="number ">20</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="agent">
-            <div class="name">Иванов<br> Иван</div>
-            <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
-            <div class="work">
-                <div class="work_hpd">
-                    <div class="text">ШПД</div>
-                    <div class="progress">
-                        <div class="number ">100</div>
-                    </div>
-                </div>
-                <div class="work_tv">
-                    <div class="text">ТВ</div>
-                    <div class="progress_tv">
-                        <div class="number ">20</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="agent">
-            <div class="name">Иванов<br> Иван</div>
-            <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
-            <div class="work">
-                <div class="work_hpd">
-                    <div class="text">ШПД</div>
-                    <div class="progress">
-                        <div class="number ">100</div>
-                    </div>
-                </div>
-                <div class="work_tv">
-                    <div class="text">ТВ</div>
-                    <div class="progress_tv">
-                        <div class="number ">20</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="agent">
-            <div class="name">Иванов<br> Иван</div>
-            <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
-            <div class="work">
-                <div class="work_hpd">
-                    <div class="text">ШПД</div>
-                    <div class="progress">
-                        <div class="number ">100</div>
-                    </div>
-                </div>
-                <div class="work_tv">
-                    <div class="text">ТВ</div>
-                    <div class="progress_tv">
-                        <div class="number ">20</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="agent">
-            <div class="name">Иванов<br> Иван</div>
-            <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
-            <div class="work">
-                <div class="work_hpd">
-                    <div class="text">ШПД</div>
-                    <div class="progress">
-                        <div class="number ">100</div>
-                    </div>
-                </div>
-                <div class="work_tv">
-                    <div class="text">ТВ</div>
-                    <div class="progress_tv">
-                        <div class="number ">20</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="agent">
-            <div class="name">Иванов<br> Иван</div>
-            <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
-            <div class="work">
-                <div class="work_hpd">
-                    <div class="text">ШПД</div>
-                    <div class="progress">
-                        <div class="number ">100</div>
-                    </div>
-                </div>
-                <div class="work_tv">
-                    <div class="text">ТВ</div>
-                    <div class="progress_tv">
-                        <div class="number ">20</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="agent">
-            <div class="name">Иванов<br> Иван</div>
-            <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
-            <div class="work">
-                <div class="work_hpd">
-                    <div class="text">ШПД</div>
-                    <div class="progress">
-                        <div class="number ">100</div>
-                    </div>
-                </div>
-                <div class="work_tv">
-                    <div class="text">ТВ</div>
-                    <div class="progress_tv">
-                        <div class="number ">20</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="agent">
-            <div class="name">Иванов<br> Иван</div>
-            <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
-            <div class="work">
-                <div class="work_hpd">
-                    <div class="text">ШПД</div>
-                    <div class="progress">
-                        <div class="number ">100</div>
-                    </div>
-                </div>
-                <div class="work_tv">
-                    <div class="text">ТВ</div>
-                    <div class="progress_tv">
-                        <div class="number ">20</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="agent">
-            <div class="name">Иванов<br> Иван</div>
-            <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
-            <div class="work">
-                <div class="work_hpd">
-                    <div class="text">ШПД</div>
-                    <div class="progress">
-                        <div class="number ">100</div>
-                    </div>
-                </div>
-                <div class="work_tv">
-                    <div class="text">ТВ</div>
-                    <div class="progress_tv">
-                        <div class="number ">20</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="agent">
-            <div class="name">Иванов<br> Иван</div>
-            <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
-            <div class="work">
-                <div class="work_hpd">
-                    <div class="text">ШПД</div>
-                    <div class="progress">
-                        <div class="number ">100</div>
-                    </div>
-                </div>
-                <div class="work_tv">
-                    <div class="text">ТВ</div>
-                    <div class="progress_tv">
-                        <div class="number ">20</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="agent">
-            <div class="name">Иванов<br> Иван</div>
-            <div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
-            <div class="work">
-                <div class="work_hpd">
-                    <div class="text">ШПД</div>
-                    <div class="progress">
-                        <div class="number ">100</div>
-                    </div>
-                </div>
-                <div class="work_tv">
-                    <div class="text">ТВ</div>
-                    <div class="progress_tv">
-                        <div class="number ">20</div>
-                    </div>
-                </div>
-            </div>
+    <?php
+    foreach($res1->object as $rr){
+        $usr = $rr['id'];
+        $orm2 = new \Core\Orm\Orm;
+        $res2 = $orm2->select("last_name,name")
+        ->where("id_user = $usr")
+        ->from("expansion_user")->limit("1")->execute()->object();
+
+        $rr['name'] = $res2->object[0]["last_name"]." ".$res2->object[0]["name"];
+
+ $color ="#". dechex(rand(0,255)).dechex(rand(0,255)) .dechex(rand(0,255)) ;   
+ $arr_color["$dex"]["color"] = $color;
+    echo '
+<div class="agent"  style="border-color:'.$color.' ;">
+<div class="name">'.$rr['name'].'</div>
+<div class="avatar"><img src="/template/defaults/img/broad/ava.png" alt=""></div>
+<div class="work">
+    <div class="work_hpd">
+        <div class="text">ШПД</div>
+        <div class="progress" style="width: '.$rr['zd_shpd'].'%;">
+            <div class="number ">'.$rr['zd_shpd'].'</div>
         </div>
     </div>
+    <div class="work_tv">
+        <div class="text">ТВ</div>
+        <div class="progress" style="width: '.$rr['zd_tv'].'%;">
+            <div class="number ">'.$rr['zd_tv'].'</div>
+        </div>
+    </div>
+</div>
+</div>';
+
+$arr_color["$dex"]["tv"] =$rr['zd_tv'];
+$arr_color["$dex"]["shpd"] =$rr['zd_shpd'];
+$arr_color["$dex"]["name"] =$rr['name'];
+$dex++;
+    }
+    $tv = null;
+    $shpd = null;
+    $coll = null;
+    $name = null;
+    foreach($arr_color as $rts){
+    $coll = $coll. " '".$rts["color"]."', ";
+    $tv = $tv." ".$rts["tv"].", ";
+    $shpd = $shpd." ".$rts["shpd"].", ";
+    $name = $name." '".$rts["name"]."', ";
+    }
+?>
+        
     <div class="panel">
         <div class="chart_hpd container">
                     <canvas id="myChart" width="400" height="400"></canvas>
@@ -359,10 +77,10 @@
 var myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ['Иванов Иван', 'Петров Петр', 'Тестов Тестер', 'Тткшов ТТК', 'Мафия', 'Тткшов ТТК', 'Мафия'],
+        labels: [<?php echo $name;?>],
         datasets: [{
-            data: [21.92, 23.53, 14.94, 26.62, 12.99, 26.62, 12.99],
-            backgroundColor: ['#e91e63', '#00e676', '#ff5722', '#1e88e5', '#ffd600', '#00e676', '#ff5722'],
+            data: [<?php echo $shpd;?>],
+            backgroundColor: [<?php echo $coll;?>],
             borderWidth: 0.5 ,
             borderColor: '#ddd'
         }]
@@ -408,10 +126,10 @@ var ctx = document.getElementById('myChart1').getContext('2d');
 var myChart1 = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ['Dairy', 'Fruits', 'Lean meats', 'Vegetables', 'Whole grains'],
+        labels: [<?php echo $name;?>],
         datasets: [{
-            data: [27.92, 17.53, 14.94, 26.62, 12.99],
-            backgroundColor: ['#e91e63', '#00e676', '#ff5722', '#1e88e5', '#ffd600'],
+            data: [<?php echo $tv;?>],
+            backgroundColor: [<?php echo $coll;?>],
             borderWidth: 0.5 ,
             borderColor: '#ddd'
         }]
