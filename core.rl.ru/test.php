@@ -75,7 +75,7 @@ class Test
         $res = $mdr->returnPexUser($_SESSION["id"]);
         var_dump("<pre>",$res );
 
-        var_dump(\Core\Permission\Config\Right::accessRights("admin3"));*/
+        var_dump(\Core\Permission\Config\Right::accessRights("admin3"));
         $orm = new \Core\Orm\Orm;
         $orm->insert("
         group = default,
@@ -93,7 +93,16 @@ class Test
         func = start,
         Описание = Потанцеальные клиенты
         ")            
-        ->from("router")->execute();
+        ->from("router")->execute(); */
+
+
+        $dd = new \Core\Orm\Create;
+        $dd -> create("broad_static")
+        ->add("zd_shpd","INT","11","not null","ЗАЯВОК НА ШПД")
+        ->add("zd_tv","INT","11","not null","ЗАЯВОК НА ТВ")
+        ->add("con_shpd","INT","11","not null","ПОДКЛЮЧЕНО ШПД")
+        ->add("con_tv","INT","11","not null","ПОДКЛЮЧЕНО ТВ");
+        $dd ->execute();
 
     }
 }
