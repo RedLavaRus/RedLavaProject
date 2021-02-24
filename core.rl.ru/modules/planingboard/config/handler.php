@@ -38,16 +38,16 @@ class Handler
         $dd3 = new \Core\Orm\Create;
         $dd3 -> create("broad_znanie")
         ->add("idagent","INT","11","not null","ИД АГЕНТА")
-        ->add("name1","VARCHAR","11","not null","Название обучения")
-        ->add("stat1","VARCHAR","11","not null","Статус обучения")
-        ->add("name2","VARCHAR","11","not null","Название обучения")
-        ->add("stat2","VARCHAR","11","not null","Статус обучения")
-        ->add("name3","VARCHAR","11","not null","Название обучения")
-        ->add("stat3","VARCHAR","11","not null","Статус обучения")
-        ->add("name4","VARCHAR","11","not null","Название обучения")
-        ->add("stat4","VARCHAR","11","not null","Статус обучения")
-        ->add("name5","VARCHAR","11","not null","Название обучения")
-        ->add("stat5","VARCHAR","11","not null","Статус обучения");
+        ->add("name1","VARCHAR","255","not null","Название обучения")
+        ->add("stat1","VARCHAR","255","not null","Статус обучения")
+        ->add("name2","VARCHAR","255","not null","Название обучения")
+        ->add("stat2","VARCHAR","255","not null","Статус обучения")
+        ->add("name3","VARCHAR","255","not null","Название обучения")
+        ->add("stat3","VARCHAR","255","not null","Статус обучения")
+        ->add("name4","VARCHAR","255","not null","Название обучения")
+        ->add("stat4","VARCHAR","255","not null","Статус обучения")
+        ->add("name5","VARCHAR","255","not null","Название обучения")
+        ->add("stat5","VARCHAR","255","not null","Статус обучения");
         $dd3 ->execute();
 
     }
